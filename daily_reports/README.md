@@ -2,6 +2,39 @@
 
 最近三天日报（最新在前）：
 
+# [20261016](./202610/20261016.md)
+## 📌 今日概况
+
+今日共检索候选论文 16 篇；关键词+LLM 智能匹配遥感交叉论文 4 篇；最终纳入日报 4 篇。
+
+今日论文聚焦遥感图像分割与理解，涵盖数据增强、多模态推理、洪涝像素级分析及卫星调度。ShadowCast提出上下文感知阴影增强提升分割鲁棒性；GeoReason结合逻辑推理与空间保真；FloodVLM-Pix构建语言引导的洪涝像素级基准；另有一篇系统梳理对地观测卫星调度模型分类与挑战。整体呈现从单一分割向多模态推理与任务级优化延伸的趋势。
+
+## ✨ 今日亮点
+
+- 阴影增强与逻辑推理成为提升遥感分割鲁棒性与可解释性的两条路径。
+- 洪涝理解从SAR分割转向语言引导的像素级多模态基准构建。
+- 卫星调度研究系统化梳理模型分类，指出计算复杂度等开放挑战。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261016] ShadowCast: On-the-Fly Context-Aware Shadow Augmentation for Remote Sensing Image Segmentation | Kim Yechan, Yoon Dongho, Joo Jongmin, Park JongHyun, Jeon Moongu | Gwangju Institute of Science and Technology (GIST), 123 Cheomdangwagi-ro, Buk-gu, Jeonnam-Gwangju,, Korea (；AI Laboratory, LIG Defense\&Aerospace, 333 Pangyo-ro, Bundang-gu, Seongnam-si, Gyeonggi-do,, Korea ( | 提出ShadowCast，在线上下文感知阴影增强，提升遥感图像分割对阴影干扰的鲁棒性。 | [#1504](https://github.com/thinson/RS-PaperClaw/issues/1504) |
+| [20261016] GeoReason: Bridging Logical Reasoning and Spatial Fidelity in Remote Sensing Segmentation | Fan Cheng, Wu Han, Luo Tingzhang, Dong Minjing, Tang Yehui, Guo Jianyuan | City University of Hong Kong；School of Computer Science, Peking University | GeoReason融合多模态大模型逻辑推理与空间保真，改进遥感分割的自回归生成质量。 | [#1505](https://github.com/thinson/RS-PaperClaw/issues/1505) |
+| [20261016] FloodVLM-Pix: Language-Guided Pixel-Level Flood Understanding | Zhang Chengyang, Wang Zhihao, Long Zhiyu, Wang Xueqian, Yao Quanming, Wu Wei, Li Gang | Tsinghua University；National Disaster Reduction Center；scription quality and pixel-level flood segmentation perfor- Existing flood research remains flood-segmentation-centric；the existing remote sensing research on floods primarily synthetic aperture radar (SAR) images [54]. SAR imagery | FloodVLM-Pix构建语言引导的像素级洪涝理解基准，推动从分割向多模态洪涝分析扩展。 | [#1506](https://github.com/thinson/RS-PaperClaw/issues/1506) |
+| [20261016] Earth Observation Satellite Scheduling Models: Taxonomy, Classification and Open Challenges | Caleiras Margarida, Paulo Jorge Nascimento, Moniz Samuel | University of Coimbra, CEMMPRE, Department of Mechanical Engineering, 3030-788 Coimbra, Portugal | 系统综述对地观测卫星调度模型，建立分类体系并归纳计算复杂度与开放挑战。 | [#1507](https://github.com/thinson/RS-PaperClaw/issues/1507) |
+
+## 🔎 观察
+
+- 阴影增强与逻辑推理分别从数据与模型层面回应遥感分割的鲁棒性和可解释性需求，形成互补。
+- 洪涝研究正从单一SAR分割转向语言引导的多模态像素级理解，基准构建成为关键推动力。
+
+---
+
+Powered by OpenClaw🦞
+
+---
+
 # [20261015](./202610/20261015.md)
 ## 📌 今日概况
 
@@ -60,43 +93,6 @@ Powered by OpenClaw🦞
 
 - 高光谱正从分类走向解混与跨模态迁移，与3D高斯泼溅、VLA和SLAM深度耦合。
 - 多篇工作强调冻结主干或降低训练成本，反映星载与机器人端算力受限的现实约束。
-
----
-
-Powered by OpenClaw🦞
-
----
-
-# [20261013](./202610/20261013.md)
-## 📌 今日概况
-
-今日共检索候选论文 17 篇；关键词+LLM 智能匹配遥感交叉论文 8 篇；最终纳入日报 8 篇。
-
-今日研究聚焦遥感基础模型的数据构建与智能体可靠性。一方面，STRATA-S12和MajorTOM等开放多传感器、多时相预训练语料被提出，支撑自监督学习；另一方面，Omni-RS统一多任务理解与生成，ReDiS和Hallucination-aware方法提升多模态推理的忠实性。同时，行为自监控与可信智能体框架强调自主对地观测中的可靠性，递归自改进则探索任务自动化新范式。
-
-## ✨ 今日亮点
-
-- 多传感器多时相预训练语料成为基础模型关键支撑
-- 遥感多模态推理向忠实性与自进化方向演进
-- 智能体自主对地观测强调可信与行为监控
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261013] Deficit-Driven Stratified Acquisition for Building STRATA-S12: An Open SAR-Optical Corpus for Self-Supervised Learning | Sanchez-Leon Christian, Chen Dongming, Wang Dongqi | Software College, Northeastern University | 构建按缺陷分层采集的SAR-光学开放语料STRATA-S12，服务自监督学习。 | [#1479](https://github.com/thinson/RS-PaperClaw/issues/1479) |
-| [20261013] Omni-RS: Unifying Multi-Task Understanding and Generation in Remote Sensing | Pan Yin. Shuai Yang, Liu Yuanhao, Tang Datao, Li Jialin, Wang Hao, Liu Pei, Li Kaiyu, Zhao Cong, Cao Xiangyong | Xi'an Jiaotong University | Omni-RS统一遥感多任务理解与生成，基于多模态大模型框架。 | [#1480](https://github.com/thinson/RS-PaperClaw/issues/1480) |
-| [20261013] Hallucination-aware Faithful Reasoning in Remote Sensing | Liu Yi, Zhang Jing, Feng Xiang, Tian Xiaoyu, Guo Haonan, Wang Di, Wang Zengmao, Du Bo | School of Computer Science, Chongqing University | 提出幻觉感知的忠实推理方法，提升遥感多模态大模型可靠性。 | [#1481](https://github.com/thinson/RS-PaperClaw/issues/1481) |
-| [20261013] ReDiS: Reasoning-Diagnosis Self-Evolution for Multimodal Reasoning in Remote Sensing | Liu Yi, Jiang Wentao, Ni Shuo, Luo Zhiming, Wang Di, Wang Zengmao, Zhang Jing, Du Bo | School of Computer Science, Wuhan University；Zhongguancun Academy；National Key Laboratory of Science and Technology on Space-Born Intelligent Information Processing；Beijing Institute of Technology | ReDiS通过推理-诊断自进化增强遥感多模态推理与视觉定位。 | [#1482](https://github.com/thinson/RS-PaperClaw/issues/1482) |
-| [20261013] Behavioural self-monitoring for autonomous earth observation agents: The attribute reliability monitor (ARM) | Alejandro D. Mousist | Thales Alenia Space España | 面向自主对地观测智能体，提出属性可靠性监控器实现行为自监控。 | [#1483](https://github.com/thinson/RS-PaperClaw/issues/1483) |
-| [20261013] MajorTOM:Elliot Pretrain, A Multi-Sensor, Multi-Temporal Pretraining Dataset for Earth Observation | Carmen Oliver Huidobro, Czerkawski Mikolaj, Monsalvez-Pozo Kevin, Aybar Cesar, Camps-Valls Gustau, Oscar J. Pellicer-Valero | Universitat de València, Valencia, Spain | 发布MajorTOM多传感器多时相对地观测预训练数据集，支撑基础模型。 | [#1484](https://github.com/thinson/RS-PaperClaw/issues/1484) |
-| [20261013] Trust Before Autonomy: Rethinking Agentic Remote Sensing for Crisis Response | Angelidis Georgios, Psiris Aggelos, Evangelatos Spyridon, Lagkas Thomas, Sarigiannidis Panagiotis, Varlamis Iraklis, Georgios Th. Papadopoulos | Harokopio University of Athens；Dimocritus University of Thrace；University of Western Macedonia | 反思危机响应中智能体遥感，强调自主前需建立信任机制。 | [#1485](https://github.com/thinson/RS-PaperClaw/issues/1485) |
-| [20261013] The Last Remote Sensing Model Built by Humans? Casting Any Earth Observation Task as Recursive Self-Improvement | Zhao Sijie, Zhou Zeqi, Qi Heli, Fu Xuanchao, Zheng Zhuo, Xia Junshi, Wang Junjue, Xuan Weihao, Yokoya Naoto | University of Tokyo；Stanford University；Yokoya-Lab-UTokyo/RSI4 EO | 将任意对地观测任务转化为递归自改进，探索编码智能体自动化。 | [#1486](https://github.com/thinson/RS-PaperClaw/issues/1486) |
-
-## 🔎 观察
-
-- 预训练语料从单传感器向多传感器多时相演进，数据分层与缺陷驱动采集受关注。
-- 遥感大模型研究正从性能提升转向可信、忠实与自主智能体的可靠性保障。
 
 ---
 
