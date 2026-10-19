@@ -6,6 +6,7 @@ import re
 
 from clients.llm_client import call_llm
 from services.paper_analysis import is_valid_institution_text
+from services.report_status import completion_marker
 
 
 def extract_author(body: str) -> str:
@@ -94,17 +95,24 @@ def build_digest_with_llm(date: str, papers: list, stats: dict | None = None, fa
 
         lines = [f"# 日报 {date}", "", "## 📌 今日概况", "", overview_text, ""]
         append_failed_items(lines, failed_items)
+        verified = bool(completion_marker(date, stats, 0))
+        observations = ([
+            "- 已在元数据公开后重新核查，确认当日没有符合遥感与 AI / 计算机视觉范围的论文。",
+            "- 此为已复核的无匹配结果，无论文处理失败。",
+        ] if verified else [
+            "- 当日无成功纳入论文，建议优先检查候选筛选结果与失败原因。",
+            "- 若连续出现空日报，应复核 arXiv 日期窗口、关键词配置与 LLM 筛选输出。",
+        ])
         lines += [
             "## 🔎 观察",
             "",
-            "- 当日无成功纳入论文，建议优先检查候选筛选结果与失败原因。",
-            "- 若连续出现空日报，应复核 arXiv 日期窗口、关键词配置与 LLM 筛选输出。",
+            *observations,
             "",
             "---",
             "",
             "Powered by OpenClaw🦞",
         ]
-        return "\n".join(lines)
+        return "\n".join(lines) + completion_marker(date, stats, 0)
 
     prompt = (
         "你是遥感AI日报编辑。请基于给定论文列表输出严格JSON：\n"
@@ -177,7 +185,7 @@ def build_digest_with_llm(date: str, papers: list, stats: dict | None = None, fa
         lines.append(f"- {observation}")
 
     lines += ["", "---", "", "Powered by OpenClaw🦞"]
-    return "\n".join(lines)
+    return "\n".join(lines) + completion_marker(date, stats, len(items))
 
 
 def append_failed_items(lines: list[str], failed_items: list[dict] | None) -> None:

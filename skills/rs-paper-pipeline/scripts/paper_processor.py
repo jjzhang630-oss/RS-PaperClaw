@@ -21,6 +21,7 @@ from services.issue_index import issue_matches_arxiv
 from pipeline_config import get_repo, load_config
 from services.paper_analysis import (
     extract_institutions_from_first_page,
+    extract_institutions_from_author_biographies,
     extract_institutions_from_latex_source,
     extract_tags,
     format_answer_md,
@@ -142,7 +143,19 @@ def process_paper(arxiv_id: str, issue_number: int | None = None, dry_run: bool 
     info["abstract_en"] = recovered["abstract_en"] or info.get("abstract_en", "")
     log_step("STEP-1", "OK", f"recovered_title={info['title'][:40]} | recovered_authors={info['authors'][:30]}")
 
-    pdf_institutions = extract_institutions_from_first_page(info["title"], info["authors"], first_page_text)
+    # Raw reading order keeps IEEE footnotes separate from the adjacent body
+    # column. Layout text can join each affiliation line to unrelated prose.
+    affiliation_page_text = first_page_text
+    try:
+        raw_page = subprocess.run(
+            ["pdftotext", "-raw", "-f", "1", "-l", "1", str(pdf_path), "-"],
+            capture_output=True, text=True, timeout=30,
+        )
+        if raw_page.returncode == 0 and raw_page.stdout.strip():
+            affiliation_page_text = raw_page.stdout
+    except Exception:
+        pass
+    pdf_institutions = extract_institutions_from_first_page(info["title"], info["authors"], affiliation_page_text)
     source_institutions = ""
     if not is_valid_institution_text(info.get("institutions", "")):
         source_path = download_source(arxiv_id)
@@ -156,9 +169,23 @@ def process_paper(arxiv_id: str, issue_number: int | None = None, dry_run: bool 
     elif is_valid_institution_text(pdf_institutions):
         info["institutions"] = pdf_institutions
     if not is_valid_institution_text(info.get("institutions", "")):
+        # Journal author biographies can be on the last page, beyond the
+        # first 30 pages used for the regular paper summary.
+        try:
+            result = subprocess.run(
+                ["pdftotext", "-layout", str(pdf_path), "-"],
+                capture_output=True, text=True, timeout=60,
+            )
+            if result.returncode == 0:
+                biographies = extract_institutions_from_author_biographies(info["authors"], result.stdout)
+                if is_valid_institution_text(biographies):
+                    info["institutions"] = biographies
+        except Exception as exc:
+            log_step("AUTHOR-BIO", "UNAVAILABLE", type(exc).__name__)
+    if not is_valid_institution_text(info.get("institutions", "")):
         try:
             html = fetch_url_with_curl(f"https://arxiv.org/html/{arxiv_id}")
-            if author_block_has_no_affiliation(html):
+            if author_block_has_no_affiliation(html, info["authors"]):
                 info["institutions"] = "原文作者栏未列出单位"
         except Exception as exc:
             log_step("AUTHOR-HTML", "UNAVAILABLE", type(exc).__name__)

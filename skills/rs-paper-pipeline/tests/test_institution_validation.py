@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from services.digest_builder import build_digest_with_llm, is_invalid_digest_institution
 from services.paper_analysis import (
+    extract_institutions_from_author_biographies,
     extract_institutions_from_first_page,
     extract_institutions_from_latex_source,
     is_valid_institution_text,
@@ -17,6 +18,26 @@ from services.paper_analysis import (
 
 
 class InstitutionValidationTest(unittest.TestCase):
+    def test_ministry_of_natural_resources_is_an_institution(self):
+        self.assertTrue(is_valid_institution_text("First Institute of Oceanography, Ministry of Natural Resources"))
+        self.assertFalse(is_valid_institution_text("University of Somewhere computational resources"))
+
+    def test_extracts_author_affiliation_from_final_page_biography(self):
+        from unittest.mock import patch
+        text = "Body text\fNoora Al-Emadi is a senior software engineer at Qatar\nComputing Research Institute, Hamad Bin Khalifa\nUniversity, Qatar."
+        with patch("services.paper_analysis.call_llm", return_value='["Qatar Computing Research Institute, Hamad Bin Khalifa University"]') as llm:
+            self.assertIn("Hamad Bin Khalifa University", extract_institutions_from_author_biographies("Al-Emadi Noora", text))
+            self.assertIn(text, llm.call_args.args[0])
+        with patch("services.paper_analysis.call_llm") as llm:
+            self.assertEqual(extract_institutions_from_author_biographies("Al-Emadi Noora", "Unrelated reference: University of Somewhere"), "")
+            llm.assert_not_called()
+
+    def test_llm_cannot_infer_a_known_authors_institution_without_text_evidence(self):
+        from unittest.mock import patch
+        page = "Revisiting Building Damage Assessment\nAnthony Cioppa, Marc Van Droogenbroeck\nAbstract\nSatellite image analysis."
+        with patch("services.paper_analysis.call_llm", return_value='["University of Liège"]'):
+            self.assertEqual(extract_institutions_from_first_page("Building Damage", "Cioppa Anthony", page), "")
+
     def test_rejects_body_text_bleed_in_institution(self):
         value = (
             "Shen Yuan Honors College, Beihang University；"
@@ -25,6 +46,24 @@ class InstitutionValidationTest(unittest.TestCase):
 
         self.assertFalse(is_valid_institution_text(value))
         self.assertTrue(is_invalid_digest_institution(value))
+
+    def test_rejects_two_column_flood_article_prose_as_affiliations(self):
+        value = ("Tsinghua University；National Disaster Reduction Center；"
+                 "scription quality and pixel-level flood segmentation perfor- Existing flood research remains flood-segmentation-centric；"
+                 "the existing remote sensing research on floods primarily synthetic aperture radar (SAR) images")
+        self.assertFalse(is_valid_institution_text(value))
+        self.assertFalse(is_valid_institution_text(
+            "University of Maryland；The ongoing expansion of satellite broadband, Earth- Recent remote-sensing research"))
+
+    def test_research_prose_is_not_an_affiliation_but_named_research_org_is(self):
+        from services.paper_analysis import _heuristic_institutions, _dedupe_institutions
+        text = "These early findings indicate an active but fragmented research\nfor advancing hyperspectral aquatic research in the cloud-computing era"
+        self.assertEqual(_heuristic_institutions(text), [])
+        self.assertFalse(is_valid_institution_text(text))
+        self.assertFalse(is_valid_institution_text("Hossain are graduates of North South University, Dhaka, Bangladesh"))
+        self.assertFalse(is_valid_institution_text("Shafin Rahman is an Associate Professor with the Department of Electrical and Computer Engineering, North South University"))
+        self.assertEqual(_heuristic_institutions("IBM Research -- Europe"), ["IBM Research -- Europe"])
+        self.assertEqual(_dedupe_institutions(["University of Maryland", text]), ["University of Maryland"])
 
     def test_accepts_common_affiliation_list(self):
         value = (

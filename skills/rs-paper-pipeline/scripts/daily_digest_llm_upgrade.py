@@ -17,9 +17,12 @@ def issue_data(issue) -> dict:
     return getattr(issue, "_rawData", None) or {}
 
 
-def load_open_issues(repo):
+def load_open_issues(repo, target_date: str | None = None):
     issues = []
-    for issue in repo.get_issues(state="open"):
+    kwargs = {"state": "open"}
+    if target_date:
+        kwargs["labels"] = [target_date]
+    for issue in repo.get_issues(**kwargs):
         raw_data = getattr(issue, "_rawData", None) or {}
         if "pull_request" in raw_data:
             continue
@@ -79,11 +82,6 @@ def _augment_papers_from_stats(repo, papers: list[dict], stats: dict | None) -> 
         return []
 
     index = ensure_index(repo)
-    by_issue_number = {
-        _paper_key(paper): paper
-        for paper in papers
-        if _paper_key(paper) is not None
-    }
     merged = []
 
     for arxiv_id in selected_ids:
@@ -92,13 +90,9 @@ def _augment_papers_from_stats(repo, papers: list[dict], stats: dict | None) -> 
             raise RuntimeError(f"Selected paper missing from issue index: {arxiv_id}")
 
         raw = issue_data(issue)
-        number = _paper_key(raw)
-        if number is not None and number in by_issue_number:
-            _merge_paper(merged, by_issue_number[number])
-            continue
+        # Direct lookups reflect just-refreshed metadata sooner than issue
+        # listings. Never replace the fresh body with the listing's old copy.
         _merge_paper(merged, raw)
-        if number is not None:
-            by_issue_number[number] = raw
 
     return merged
 
@@ -113,7 +107,7 @@ def main(target_date: str | None = None, stats_json: str | None = None):
 
     stats_map = _load_stats_map(stats_json)
 
-    issues = load_open_issues(repo)
+    issues = load_open_issues(repo, target_date)
     paper_by_date, digest_issue_by_date = collect_papers_by_date(issues)
 
     out_dir = CONFIG.temp_dir / "RS-PaperClaw" / "daily_reports"
@@ -152,11 +146,19 @@ def main(target_date: str | None = None, stats_json: str | None = None):
         title = f"日报 {date}"
         labels = [date, "日报"]
         if date in digest_issue_by_date:
-            digest_issue_by_date[date].edit(body=md, title=title, labels=labels)
-            print(f"UPDATED digest issue {date} -> #{digest_issue_by_date[date].number}")
+            published = digest_issue_by_date[date]
+            published.edit(body=md, title=title, labels=labels)
+            print(f"UPDATED digest issue {date} -> #{published.number}")
         else:
-            ni = repo.create_issue(title=title, body=md, labels=labels)
-            print(f"CREATED digest issue {date} -> #{ni.number}")
+            published = repo.create_issue(title=title, body=md, labels=labels)
+            print(f"CREATED digest issue {date} -> #{published.number}")
+        # Newly created issues may not be visible in label-filtered listings.
+        # Give the sync step a direct issue number rather than relying on that
+        # eventually consistent listing immediately after publication.
+        CONFIG.memory_dir.mkdir(parents=True, exist_ok=True)
+        receipt = CONFIG.memory_dir / f"digest_issue_{date}.json"
+        receipt.write_text(json.dumps({"repo": CONFIG.github_repo, "date": date,
+                                       "number": published.number}), encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -14,6 +14,18 @@ from clients import arxiv_client
 
 
 class ArxivClientTest(unittest.TestCase):
+    @patch.object(arxiv_client.subprocess, "run", return_value=SimpleNamespace(returncode=1))
+    @patch.object(arxiv_client.urllib.request, "urlopen")
+    def test_pdf_mirrors_returning_html_are_rejected(self, urlopen, run):
+        import tempfile
+        from dataclasses import replace
+        response = urlopen.return_value.__enter__.return_value
+        response.getheaders.return_value = []
+        response.read.return_value = b"<html>Abstract page, not a PDF</html>"
+        with tempfile.TemporaryDirectory() as directory, patch.object(arxiv_client, "CONFIG", replace(arxiv_client.CONFIG, temp_dir=Path(directory))):
+            self.assertEqual(arxiv_client.download_pdf("2610.23733v1"), (None, False))
+            self.assertFalse((Path(directory) / "2610.23733v1.pdf").exists())
+
     @patch.object(arxiv_client.subprocess, "run")
     def test_curl_preserves_error_body_and_stops_on_rate_limit(self, run):
         run.return_value = SimpleNamespace(returncode=22, stderr="curl error", stdout="Rate exceeded.\nRS_HTTP_STATUS:429")
@@ -34,6 +46,17 @@ class ArxivClientTest(unittest.TestCase):
         fetch.return_value = '<feed xmlns="http://www.w3.org/2005/Atom"><entry><title>Title</title><summary>Abstract</summary><published>2026-09-23</published><author><name>A B</name></author></entry></feed>'
         self.assertEqual(arxiv_client.fetch_paper_metadata("2609.12345")[2], "Title")
         fetch.assert_called_once_with({"id_list": "2609.12345"}, retries=4, timeout=90)
+
+    @patch.object(arxiv_client, "fetch_query_with_fallback")
+    def test_oai_keeps_original_date_and_supplements_missing_affiliations(self, fetch):
+        cached = {"authors": ["A B"], "affiliations": [], "title": "Title", "abstract": "Abstract", "published": "2026-09-23"}
+        fetch.return_value = '<feed xmlns="http://www.w3.org/2005/Atom" xmlns:a="http://arxiv.org/schemas/atom"><entry><published>2026-09-28</published><author><name>A B</name><a:affiliation>First Institute of Oceanography</a:affiliation></author></entry></feed>'
+        with patch.dict("os.environ", {"ARXIV_SOURCE": "oai"}), patch("clients.arxiv_oai.cached_metadata", return_value=cached):
+            result = arxiv_client.fetch_paper_metadata("2609.12345")
+            self.assertEqual(result[1], ["First Institute of Oceanography"])
+            self.assertEqual(result[4], "2026-09-23")
+            fetch.side_effect = arxiv_client.ArxivUnavailableError("temporarily unavailable")
+            self.assertEqual(arxiv_client.fetch_paper_metadata("2609.12345")[0], ["A B"])
 
     def test_official_endpoint_candidates_preserve_path(self):
         self.assertEqual(

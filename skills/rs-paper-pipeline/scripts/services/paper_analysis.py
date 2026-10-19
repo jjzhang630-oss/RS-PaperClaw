@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 import tarfile
 import gzip
 from pathlib import Path
@@ -146,6 +147,8 @@ def _dedupe_institutions(institutions: list[str]) -> list[str]:
             continue
         if re.search(r"@", text):
             continue
+        if not is_valid_institution_text(text):
+            continue
         lowered = text.casefold()
         if lowered in seen:
             continue
@@ -156,10 +159,17 @@ def _dedupe_institutions(institutions: list[str]) -> list[str]:
 
 INSTITUTION_KEYWORD_PATTERN = re.compile(
     r"(universit|univ\b|college|school|institut|academy|laborator|centre|center|"
-    r"department|hospital|faculty|laboratory|lab\b|research|hochschule|fraunhofer|"
+    r"department|hospital|faculty|laboratory|lab\b|hochschule|fraunhofer|"
     r"dlr\b|cnrs\b|enpc\b|国家|大学|学院|研究所|实验室|中心|医院)",
     re.IGNORECASE,
 )
+NAMED_RESEARCH_ORG_PATTERN = re.compile(
+    r"^[A-Z][A-Za-z&.-]*(?:\s+[A-Z][A-Za-z&.-]*){0,3}\s+Research(?:\s*[-–]+\s*|\s+)?(?:[A-Z][A-Za-z&.-]*)?$"
+)
+
+
+def _has_institution_signal(text: str) -> bool:
+    return bool(INSTITUTION_KEYWORD_PATTERN.search(text) or NAMED_RESEARCH_ORG_PATTERN.fullmatch(text))
 
 
 def _strip_email_tail(text: str) -> str:
@@ -194,7 +204,7 @@ def is_valid_institution_text(text: str) -> bool:
         r"paper|propos(?:e|ed|es|ing)|method|approach|dataset|"
         r"experiments?|results?|capture|learn(?:ing)?|strategy|benchmark|supported|grants?|"
         r"tasks?|inference|applying|transformers?|tokens?|speeds?|impractical|"
-        r"foundation|funds?|project|computational|constraints?|resources?"
+        r"foundation|funds?|project|computational|constraints?|resources?|existing|remains|primarily|ongoing"
         r")\b",
         re.IGNORECASE,
     )
@@ -207,11 +217,18 @@ def is_valid_institution_text(text: str) -> bool:
         part = re.sub(r"\s+", " ", chunk).strip(" ,;:，；：")
         if not part:
             continue
+        if re.match(r"(?i)^(?:for|these|this|we|our|however|therefore)\b", part):
+            return False
+        if re.search(r"(?i)\b(?:is|are|was|were)\s+(?:(?:a|an|the)\s+)?(?:(?:senior|principal|associate|assistant|full|global|adjunct|visiting|research)\s+)*(?:graduates?|students?|professors?|scientists?|engineers?|researchers?|managers?|analysts?)\b", part):
+            return False
         if re.search(r"https?://|www\.|github\.com|arxiv\.org", part, re.IGNORECASE):
             return False
         if len(part) > 180:
             return False
-        if strong_prose_pattern.search(part):
+        # "Resources" is also part of official organization names. Remove
+        # only the named ministry phrase before checking for body-text bleed.
+        prose_check = re.sub(r"\bMinistry of Natural Resources\b", "", part, flags=re.I)
+        if strong_prose_pattern.search(prose_check):
             return False
         if domain_prose_pattern.search(part) and not INSTITUTION_KEYWORD_PATTERN.search(part):
             return False
@@ -253,7 +270,7 @@ def _looks_like_institution_candidate(text: str) -> bool:
         return False
     if re.search(r"\b(?:project\s+page|github|corresponding\s+author)\b", cleaned, re.IGNORECASE):
         return False
-    if not INSTITUTION_KEYWORD_PATTERN.search(cleaned):
+    if not _has_institution_signal(cleaned):
         return False
     return is_valid_institution_text(cleaned)
 
@@ -294,7 +311,7 @@ def _heuristic_institutions(first_page_text: str) -> list[str]:
         if re.search(r"^(abstract|摘要|keywords?|index terms|introduction)\b", line, re.IGNORECASE):
             continue
         line = _strip_email_tail(line)
-        if INSTITUTION_KEYWORD_PATTERN.search(line) and not re.search(r"@", line):
+        if _has_institution_signal(_clean_institution_candidate(line)) and not re.search(r"@", line):
             parts = re.split(r"\s+(?=\d+\s+[A-Z])", line)
             for part in parts:
                 cleaned = _clean_institution_candidate(re.sub(r"^\d+\s*", "", part).strip(" ."))
@@ -568,6 +585,9 @@ def _read_latex_sources(source_path: Path) -> list[str]:
                     sources.append((member.name, text))
         else:
             raw = source_path.read_bytes()
+            # arXiv returns the PDF itself for PDF-only submissions.
+            if raw.startswith(b"%PDF-"):
+                return []
             try:
                 raw = gzip.decompress(raw)
             except Exception:
@@ -611,6 +631,15 @@ def extract_institutions_from_latex_source(source_path: Path | None) -> str:
     return "；".join(_dedupe_institutions(institutions))
 
 
+def institution_has_text_evidence(institution: str, context: str) -> bool:
+    def words(value):
+        value = unicodedata.normalize("NFKD", value.casefold())
+        value = "".join(c for c in value if not unicodedata.combining(c))
+        return set(re.findall(r"[^\W\d_]{3,}", value))
+    tokens = words(institution) - {"the", "and", "for", "of"}
+    return bool(tokens) and tokens <= words(context)
+
+
 def extract_institutions_from_first_page(title: str, authors: str, first_page_text: str) -> str:
     if not first_page_text.strip():
         return ""
@@ -652,12 +681,53 @@ def extract_institutions_from_first_page(title: str, authors: str, first_page_te
             try:
                 data = json.loads(match.group(0))
                 if isinstance(data, list):
-                    institutions = [str(item) for item in data if isinstance(item, str)]
+                    institutions = [item for item in data if isinstance(item, str)
+                                    and institution_has_text_evidence(item, first_page_text)]
             except Exception:
                 institutions = []
 
     institutions = _dedupe_institutions(institutions)
     return "；".join(institutions)
+
+
+def extract_institutions_from_author_biographies(authors: str, pdf_text: str) -> str:
+    """Use author biographies at the end of journal articles as a fallback.
+
+    Keep the original column layout: it separates biographies from references
+    and body text in magazine templates. Require an author name and role before
+    asking the model to extract affiliations from the final pages.
+    """
+    tail = "\f".join((pdf_text or "").split("\f")[-4:])[-18000:]
+    names = [name.strip() for name in (authors or "").split(",") if name.strip()]
+    has_author = any(
+        len(words := re.findall(r"[^\W\d_]+", name, re.UNICODE)) >= 2
+        and all(re.search(rf"\b{re.escape(word)}\b", tail, re.I) for word in words[:2])
+        for name in names
+    )
+    if not has_author or not re.search(
+        r"\b(?:is (?:an? |the )?(?:senior |principal |associate |assistant |full |global )?"
+        r"(?:software engineer|scientist|professor|researcher|manager)|"
+        r"(?:analyst|manager|professor|scientist|engineer) (?:at|with))\b", tail, re.I
+    ):
+        return ""
+    prompt = (
+        "从论文末页的作者简介中提取作者所属单位。只依据明确的作者简介，不从正文、"
+        "参考文献或致谢推断单位；不要输出职位、邮箱或作者姓名。去重后只返回严格 JSON 数组，"
+        "无法可靠提取时返回 []。\n"
+        f"作者：{authors}\n论文末页（保留分栏）：\n{tail}"
+    )
+    output = call_llm(prompt, max_tokens=600, timeout=120) or ""
+    match = re.search(r"\[[\s\S]*\]", output)
+    if not match:
+        return ""
+    try:
+        values = json.loads(match.group(0))
+    except (ValueError, TypeError):
+        return ""
+    if not isinstance(values, list):
+        return ""
+    return "；".join(_dedupe_institutions([v for v in values if isinstance(v, str)
+                                         and institution_has_text_evidence(v, tail)]))
 
 
 def extract_abstract_from_pdf_text(pdf_text: str) -> str:

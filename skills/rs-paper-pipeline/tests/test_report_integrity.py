@@ -13,6 +13,21 @@ import daily_arxiv_cross_filter as cross_filter
 
 
 class IntegrityTest(unittest.TestCase):
+    def test_generic_sensing_and_robot_navigation_do_not_pass_rs_ai_filter(self):
+        excluded = [
+            {"title": "Sapphire Photonic Crystal Fiber Sensor", "abstract": "Remote sensing of furnace temperature with an optical fiber."},
+            {"title": "Semantic-Aware Autonomous Exploration for UAVs in Unknown Indoor Environments", "abstract": "Neural networks for indoor navigation with an RGB-D camera."},
+            {"title": "Material Cues for Occluded Object Localization in Single Hyperspectral Images", "abstract": "Object detection in indoor scenes from two laboratory cameras."},
+        ]
+        for candidate in excluded:
+            self.assertFalse(cross_filter.candidate_is_in_scope(candidate))
+        included = {"title": "UAV Visual Navigation with Satellite Maps", "abstract": "A deep learning method for geospatial localization."}
+        self.assertTrue(cross_filter.candidate_is_in_scope(included))
+        # The LLM still decides the AI/CV intersection. Legitimate vision
+        # papers do not always contain a literal model-family keyword.
+        self.assertTrue(cross_filter.candidate_is_in_scope({
+            "title": "Remote Sensing Visual Grounding", "abstract": "A teacher-student framework for open-set image-query localization."}))
+
     def test_valid_metadata_with_wrong_report_date_requires_refresh(self):
         issue = SimpleNamespace(body="# [20260928] Paper", labels=[SimpleNamespace(name="20260928")])
         self.assertFalse(cross_filter.issue_has_valid_metadata(issue, "20260925"))
@@ -45,6 +60,12 @@ class IntegrityTest(unittest.TestCase):
         lookup_issue(repo, {"2609.12345v1": {"number": 5}, "2609.12345": {"number": 9}}, "2609.12345v12")
         repo.get_issue.assert_called_once_with(5)
 
+    def test_html_affiliation_containing_only_known_author_names(self):
+        html = '<div class="ltx_authors"><span class="ltx_personname">Anthony Cioppa</span><span class="ltx_affiliation">Affiliation: Pietro Ceccato and Marc Van Droogenbroeck</span></div>'
+        authors = "Cioppa Anthony, Ceccato Pietro, Van Droogenbroeck Marc"
+        self.assertTrue(author_block_has_no_affiliation(html, authors))
+        self.assertFalse(author_block_has_no_affiliation(html.replace("Pietro Ceccato", "University of Liege"), authors))
+
     def test_similar_title_cannot_match_a_different_arxiv_id(self):
         issue = SimpleNamespace(title="Implicit Neural Representation for Hyperspectral", body="[abs](https://arxiv.org/abs/2609.12345v2)")
         self.assertTrue(issue_matches_arxiv(issue, "2609.12345"))
@@ -59,6 +80,9 @@ class IntegrityTest(unittest.TestCase):
         lookup.return_value = SimpleNamespace(_rawData={"number": 2})
         stats = {"selected_arxiv_ids": ["2609.12345"], "successful_selected_arxiv_ids": ["2609.12345"]}
         self.assertEqual(digest._augment_papers_from_stats(Mock(), [{"number": 1}, {"number": 2}], stats), [{"number": 2}])
+        lookup.return_value = SimpleNamespace(_rawData={"number": 2, "body": "fresh metadata"})
+        self.assertEqual(digest._augment_papers_from_stats(Mock(), [{"number": 2, "body": "stale metadata"}], stats),
+                         [{"number": 2, "body": "fresh metadata"}])
         self.assertEqual(digest._augment_papers_from_stats(Mock(), [{"number": 1}], {"selected_arxiv_ids": []}), [])
         with self.assertRaises(RuntimeError):
             digest._augment_papers_from_stats(Mock(), [], {"selected_arxiv_ids": ["2609.12345"]})

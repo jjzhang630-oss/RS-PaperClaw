@@ -10,23 +10,35 @@ from __future__ import annotations
 import re
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from clients.arxiv_client import ArxivUnavailableError, fetch_recent_candidates, has_remote_sensing_signal
 from clients.llm_client import call_llm
 from paper_processor import process_paper
 from pipeline_config import get_repo, load_config
-from services.filter_assets import load_ai_signal_patterns, render_filter_prompt
+from services.filter_assets import load_ai_signal_patterns, load_application_patterns, render_filter_prompt
 from services.digest_builder import extract_author, extract_institution, is_invalid_digest_field, is_invalid_digest_institution
 from services.issue_index import ensure_index, lookup_issue, update_index_from_issue, save_index
+from services.report_status import empty_result_is_settled
 
 CONFIG = load_config()
 AI_MATCH_PATTERNS = load_ai_signal_patterns()
+NON_RS_APPLICATION_PATTERNS = load_application_patterns("non_rs_application_patterns")
+EXPLICIT_RS_APPLICATION_PATTERNS = load_application_patterns("explicit_rs_application_patterns")
 
 
 def has_ai_signal(text: str) -> bool:
     return any(pattern.search(text) for pattern in AI_MATCH_PATTERNS)
+
+
+def candidate_is_in_scope(candidate: dict) -> bool:
+    text = f"{candidate['title']}\n{candidate['abstract']}"
+    if not has_remote_sensing_signal(text):
+        return False
+    if any(pattern.search(text) for pattern in NON_RS_APPLICATION_PATTERNS):
+        return any(pattern.search(text) for pattern in EXPLICIT_RS_APPLICATION_PATTERNS)
+    return True
 
 
 def _parse_llm_ids(raw_output: str) -> set[str] | None:
@@ -76,7 +88,7 @@ def llm_cross_filter(candidates):
 
     if keep_ids is not None:
         selected = [c for c in candidates if _match_id(c["arxiv_id"], keep_ids)]
-        result = [c for c in selected if has_remote_sensing_signal(f"{c['title']}\n{c['abstract']}")]
+        result = [c for c in selected if candidate_is_in_scope(c)]
         print(f"  [LLM 解析] 成功，命中 {len(result)} 篇")
         return result
 
@@ -85,7 +97,7 @@ def llm_cross_filter(candidates):
     out_items = []
     for c in candidates:
         text = f"{c['title']}\n{c['abstract']}"
-        if has_remote_sensing_signal(text) and has_ai_signal(text):
+        if candidate_is_in_scope(c) and has_ai_signal(text):
             out_items.append(c)
     print(f"  [关键词降级] 命中 {len(out_items)} 篇")
     return out_items
@@ -171,7 +183,12 @@ def main(dry_run=False, days_back=2, stats_out: str | None = None, target_date: 
 
     stats = {
         "date": target_date or datetime.now().strftime("%Y%m%d"),
-        "metadata_source": os.environ.get("ARXIV_SOURCE", "api"),
+        "metadata_source": (
+            "api" if target_date and (datetime.now().date() - datetime.strptime(target_date, "%Y%m%d").date()).days > 14
+            else os.environ.get("ARXIV_SOURCE", "api")
+        ),
+        "source_complete": True,
+        "source_checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "candidate_count": cand_count,
         "llm_selected_count": selected_count,
         "existing_count": existing_count,
@@ -210,6 +227,10 @@ def main(dry_run=False, days_back=2, stats_out: str | None = None, target_date: 
                 f"reason={x['reason']} | {item['title'][:90]}"
             )
         return
+
+    if not selected and target_date and not empty_result_is_settled(target_date, stats["source_checked_at"]):
+        print(f"DEFERRED_EMPTY: {target_date} metadata may not be public yet; will recheck before publishing")
+        raise SystemExit(76)
 
     print("[4/5] 提交 issue（不重复）...")
     for task in todo:
