@@ -2,6 +2,40 @@
 
 最近三天日报（最新在前）：
 
+# [20261019](./202610/20261019.md)
+## 📌 今日概况
+
+今日共检索候选论文 11 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
+
+今日研究呈现三条并行脉络：高光谱分类引入随机潜世界建模以预测未来状态，提升表征学习能力；星上AI处理链覆盖从应用开发到嵌入式部署与任务级编排，强调工程化落地；植被指数提取工具则聚焦ROI空间一致性分析，服务精细农业。整体趋势显示遥感AI正从单一模型创新转向系统级部署与领域专用工具开发，兼顾预测性建模与轻量化实现。
+
+## ✨ 今日亮点
+
+- 高光谱分类探索随机潜世界建模，通过预测未来状态增强表征学习。
+- 星上AI处理链实现从开发到嵌入式部署及任务级编排的全流程覆盖。
+- 植被指数提取工具强调ROI空间一致性，支撑草坪影像精细分析。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261019] See the Future, Classify the Present: Stochastic Latent World Modeling for Hyperspectral Images | Ahmad Muhammad, Vivone Gemine, Hänsch Ronny, Sohaib Ahmed, Mazzara Manuel, Hong Danfeng | the Khanpur Institute of Technology, Khanpur, Pakistan. (；the National Research Council - Institute of Methodologies for Environmental Analysis (CNR-IMAA), Tito, Italy (；Department of SAR Technology, German Aerospace Center (DLR), Germany. (；Institute of Software Development and Engineering, Innopolis University, Innopolis,, Russia. (；School of Automation, Southeast University, Nanjing, China. ( | 提出随机潜世界建模用于高光谱图像分类，通过潜状态预测未来以学习更具判别性的表征。 | [#1544](https://github.com/thinson/RS-PaperClaw/issues/1544) |
+| [20261019] A Generic On-Board AI Processing Chain for Earth Observation: From Application Development to Embedded Deployment and Mission-Level Orchestration | Michel-Fran{\c c}ois Foulon, Liz Ramos Medina, Goudemant Thomas, Szywala Clotilde, Robles Virgile, Petitjean Cl{é}ment, Hankache Ad{è}le, Hlimi Omar | Thales Alenia Space；IRT Saint Exupéry；Tarides | 构建通用星上AI处理链，涵盖应用开发、嵌入式部署与任务级编排，并以野火分割为例验证。 | [#1545](https://github.com/thinson/RS-PaperClaw/issues/1545) |
+| [20261019] A Flexible ROI Analysis Tool for Spatially Consistent Vegetation Index Extraction from Turfgrass Imagery | Ku Kibon, Thai Thanh Tuan, Ahn Jinhyun | Department of Electrical and Computer Engineering, Iowa State University, Ames, IA 50011, USA；Multimedia Communications Laboratory, University of Information Technology, Ho Chi Minh city 70000, Vietnam；Vietnam National University, Ho Chi Minh city 70000, Vietnam；Department of Management Information Systems, Jeju National University, Jeju 63243, Republic of Korea | 开发灵活ROI分析工具，从草坪影像中提取空间一致的植被指数，支持多光谱图像处理。 | [#1546](https://github.com/thinson/RS-PaperClaw/issues/1546) |
+
+## 🔎 观察
+
+- 高光谱分类开始借鉴世界模型思想，从静态特征提取转向动态潜状态预测，可能提升小样本下的泛化能力。
+- 星上AI研究正从算法验证走向部署编排全链路，量化与嵌入式优化成为遥感落地关键环节。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261019", "source": "oai", "checked_at": "2026-10-20T09:42:11+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 3} -->
+
+---
+
 # [20261018](./202610/20261018.md)
 ## 📌 今日概况
 
@@ -67,39 +101,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261017", "source": "oai", "checked_at": "2026-10-20T09:36:22+00:00", "source_complete": true, "candidate_count": 5, "paper_count": 2} -->
-
----
-
-# [20261016](./202610/20261016.md)
-## 📌 今日概况
-
-今日共检索候选论文 16 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
-
-今日三篇论文聚焦遥感图像分割的增强与推理能力提升。ShadowCast提出动态上下文感知阴影增强，缓解数据稀缺与域偏移；GeoReason融合多模态大模型与自回归生成，试图兼顾逻辑推理与空间保真；FloodVLM-Pix构建语言引导的像素级洪水理解基准与模型。整体趋势显示，研究正从单一分割精度转向数据增强策略、推理可解释性与灾害场景专用基准的协同推进。
-
-## ✨ 今日亮点
-
-- 阴影增强从静态离线走向动态上下文感知，提升分割鲁棒性。
-- 多模态大模型与自回归生成结合，探索推理与空间保真平衡。
-- 洪水理解引入语言引导像素级基准，推动灾害遥感精细化。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261016] ShadowCast: On-the-Fly Context-Aware Shadow Augmentation for Remote Sensing Image Segmentation | Kim Yechan, Yoon Dongho, Joo Jongmin, Park JongHyun, Jeon Moongu | Gwangju Institute of Science and Technology (GIST), 123 Cheomdangwagi-ro, Buk-gu, Jeonnam-Gwangju,, Korea (；AI Laboratory, LIG Defense\&Aerospace, 333 Pangyo-ro, Bundang-gu, Seongnam-si, Gyeonggi-do,, Korea ( | 提出ShadowCast，在线生成上下文感知阴影增强，提升遥感分割对阴影干扰的鲁棒性。 | [#1504](https://github.com/thinson/RS-PaperClaw/issues/1504) |
-| [20261016] GeoReason: Bridging Logical Reasoning and Spatial Fidelity in Remote Sensing Segmentation | Fan Cheng, Wu Han, Luo Tingzhang, Dong Minjing, Tang Yehui, Guo Jianyuan | City University of Hong Kong；School of Computer Science, Peking University | 提出GeoReason，结合多模态大模型与自回归生成，兼顾逻辑推理与空间保真分割。 | [#1505](https://github.com/thinson/RS-PaperClaw/issues/1505) |
-| [20261016] FloodVLM-Pix: Language-Guided Pixel-Level Flood Understanding | Zhang Chengyang, Wang Zhihao, Long Zhiyu, Wang Xueqian, Yao Quanming, Wu Wei, Li Gang | Tsinghua University；National Disaster Reduction Center | 构建FloodVLM-Pix基准与模型，实现语言引导的像素级洪水理解与分割。 | [#1506](https://github.com/thinson/RS-PaperClaw/issues/1506) |
-
-## 🔎 观察
-
-- 数据增强正从固定策略转向样本自适应生成，阴影等干扰因素被显式建模。
-- 遥感分割研究开始强调推理可解释性与空间精度并重，而非单纯追求指标提升。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261016", "source": "api", "checked_at": "2026-10-19T09:47:02+00:00", "source_complete": true, "candidate_count": 16, "paper_count": 3} -->
 
 ---
