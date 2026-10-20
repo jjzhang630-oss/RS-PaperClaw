@@ -2,6 +2,39 @@
 
 最近三天日报（最新在前）：
 
+# [20261017](./202610/20261017.md)
+## 📌 今日概况
+
+今日共检索候选论文 5 篇；关键词+LLM 智能匹配遥感交叉论文 2 篇；最终纳入日报 2 篇。
+
+今日研究聚焦遥感观测与跟踪中的建模与增强问题。一篇面向多光谱无人机多目标跟踪，提出光谱感知候选增强以改进扩散式MOT；另一篇利用稀疏条件依赖建模遥感观测系统，通过稀疏高斯图模型与贝叶斯推断刻画高光谱辐亮度变量关系。整体呈现从任务级跟踪优化到观测系统统计建模的双向推进。
+
+## ✨ 今日亮点
+
+- 多光谱无人机跟踪引入光谱感知候选增强，服务扩散式多目标跟踪。
+- 遥感观测系统用稀疏高斯图模型刻画变量间条件依赖结构。
+- 两篇工作分别从任务算法与统计建模切入，体现遥感AI方法多样性。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261017] Spectral-Aware Proposal Enhancement for Diffusion-Based Multispectral UAV Multi-Object Tracking | Lin Xu, Xu Tingfa, Li Tianhao, Qin Haolin, Gao Huawei, Xing Jichuan, Li Jianan | Beijing Institute of Technology, Beijing, China；Beijing Institute of Technology Chongqing Innovation Center, Chongqing, China | 面向多光谱无人机多目标跟踪，提出光谱感知候选增强以改进扩散式MOT流程。 | [#1536](https://github.com/thinson/RS-PaperClaw/issues/1536) |
+| [20261017] Exploiting sparse conditional dependence in remote sensing observing systems | Kelvin M. Leung, Susiluoto Jouni, Eckert Regina, Marzouk Youssef | Massachusetts Institute of Technology ( )；NASA Jet Propulsion Laboratory；Massachusetts Institute of Technology | 利用稀疏条件依赖与稀疏高斯图模型，对遥感观测系统高光谱辐亮度进行贝叶斯建模。 | [#1537](https://github.com/thinson/RS-PaperClaw/issues/1537) |
+
+## 🔎 观察
+
+- 多光谱跟踪开始将光谱信息嵌入候选生成阶段，而非仅作后处理融合。
+- 遥感观测系统研究强调变量依赖结构建模，统计推断与任务算法呈互补趋势。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261017", "source": "oai", "checked_at": "2026-10-20T09:36:22+00:00", "source_complete": true, "candidate_count": 5, "paper_count": 2} -->
+
+---
+
 # [20261016](./202610/20261016.md)
 ## 📌 今日概况
 
@@ -72,37 +105,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261015", "source": "api", "checked_at": "2026-10-19T10:01:13+00:00", "source_complete": true, "candidate_count": 16, "paper_count": 8} -->
-
----
-
-# [20261014](./202610/20261014.md)
-## 📌 今日概况
-
-今日共检索候选论文 5 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
-
-今日三篇论文集中体现高光谱成像与三维重建、视觉语言动作模型及SLAM的交叉融合。核心趋势是将高光谱从传统分类任务拓展至解混、跨模态token迁移与回环检测等新场景，并普遍借助高斯泼溅或冻结接口降低计算成本。研究多面向行星探测与机器人自主感知，强调光谱信息在几何与语义理解中的互补价值。
-
-## ✨ 今日亮点
-
-- 高光谱与3D高斯泼溅结合，实现统一解混与材质丰度估计
-- 冻结VLA接口下进行高光谱token迁移，降低训练开销
-- 高光谱辅助SLAM回环检测，服务行星探测自主导航
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261014] Spectral World Renderer: Unified 3D Hyperspectral Unmixing | Lee Chia-Ming, Hsiao Yu-Jou, Chang Ming-Ching, Li Xin, Liu Yu-Lun, Hsu Chih-Chung | University at Albany, State University of New York；National Yang Ming Chiao Tung University；National Cheng Kung University | 提出光谱世界渲染器，用3D高斯泼溅统一高光谱解混与材质丰度估计。 | [#1488](https://github.com/thinson/RS-PaperClaw/issues/1488) |
-| [20261014] SPECTRA-VLA: Base-Fine Hyperspectral Token Transfer at Frozen Vision-Language-Action Interfaces | Hsu Chih-Chung | National Yang Ming Chiao Tung University, Taiwan ( | 在冻结视觉语言动作接口中迁移高光谱token，实现基-细光谱残差学习。 | [#1489](https://github.com/thinson/RS-PaperClaw/issues/1489) |
-| [20261014] HyperLoop: Hyperspectral-Assisted Loop Closure Detection in 3D-SLAM for Planetary Exploration | Bhalla Annie, Rotondi Dennis, Giubilato Riccardo, Kai O. Arras, Stuerzl Wolfgang | Institute for Artificial Intelligence (AI), University of Stuttgart, Universitätsstraße 32；German Aerospace Center (DLR), Institute of Robotics and Mechatronics；Moon-Mars Outdoor Test Site (MMOTS) of the German Aerospace Center (DLR), comprising synchronized RGB-D and hyperspectral；c𝑘 𝑘-th cluster centre (RGB or spectral codebook) BoSW Bag-of-Spectral-Words；𝑎𝑖 Nearest-neighbour cluster assignment DLR German Aerospace Center | 利用高光谱与RGB-D融合，为行星探测3D-SLAM提供回环检测新方法。 | [#1490](https://github.com/thinson/RS-PaperClaw/issues/1490) |
-
-## 🔎 观察
-
-- 高光谱正从分类走向解混与跨模态迁移，与3D高斯泼溅、VLA和SLAM深度耦合。
-- 多篇工作强调冻结主干或降低训练成本，反映星载与机器人端算力受限的现实约束。
-
----
-
-Powered by OpenClaw🦞
 
 ---
