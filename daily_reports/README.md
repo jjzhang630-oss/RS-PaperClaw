@@ -2,6 +2,41 @@
 
 最近三天日报（最新在前）：
 
+# [20261018](./202610/20261018.md)
+## 📌 今日概况
+
+今日共检索候选论文 9 篇；关键词+LLM 智能匹配遥感交叉论文 4 篇；最终纳入日报 4 篇。
+
+今日研究聚焦遥感数据重建与表征学习：多高度无人机图像超分辨引入物理采样距离条件，MODIS时序重建利用土地覆盖先验，AlphaEarth嵌入分析揭示粗粒化下的稀疏性，SAR场景理解则探索冻结专家对齐以降低标注依赖。整体呈现从物理约束、先验引导到标签高效学习的多元路径。
+
+## ✨ 今日亮点
+
+- 多高度无人机超分辨引入物理地面采样距离条件，提升跨高度泛化。
+- 土地覆盖引导的两阶段网络用于MODIS反射率时序重建，填补数据缺口。
+- 冻结专家对齐实现标签高效SAR场景理解，降低标注需求。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261018] MultiAltitudeSR: Multi-Altitude Agricultural UAV Image Super-Resolution via Physical Ground Sampling Distance Conditioning | Jiang Xintong, Tian Yu, Liu Yixue, Hoyos-Villegas Valerio, Adamchuk Viacheslav, Sun Shangpeng | Department of Bioresource Engineering, McGill University；Michigan State University | 提出多高度农业无人机图像超分辨方法，以物理地面采样距离为条件提升跨高度重建效果。 | [#1539](https://github.com/thinson/RS-PaperClaw/issues/1539) |
+| [20261018] LC-TSRNet: A Land-Cover-Guided Two-Stage Network for Annual MODIS Surface Reflectance Time Series Reconstruction | Zhang Wenjuan, Ma Xuesong, Li Zhen, Wang Meixiang, Yi Caimeng, Pan Jie, Su Nan, Zhang Bing | State Key Laboratory of Remote Sensing and Digital Earth, Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China (；the Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China；the Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China (；School of Artificial Intelligence, Xidian University, Xi'an, China (；College of Information and Communication Engineering, Harbin Engineering University, Harbin, China；the Key Laboratory of Advanced Marine Communication and Information Technology, Ministry of Industry and Information Technology, Harbin Engineering University, Harbin, China (；State Key Laboratory of Remote Sensing and Digital Earth, Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China | 设计土地覆盖引导的两阶段网络，重建年度MODIS地表反射率时序并填补数据缺口。 | [#1540](https://github.com/thinson/RS-PaperClaw/issues/1540) |
+| [20261018] Emergent Sparsity: How Many Effective Variables Survive Coarse-Graining in AlphaEarth Embeddings? | Hirn Johannes | Image Processing Laboratory (IPL), Universitat de València | 分析AlphaEarth嵌入在粗粒化下的有效维度，揭示涌现稀疏性现象。 | [#1541](https://github.com/thinson/RS-PaperClaw/issues/1541) |
+| [20261018] Preserving the Manifold: Frozen Expert Alignment for Label-Efficient SAR Scene Understanding | Eli A. Underwood, I. Taylor McKechnie, Leslie M. Collins | Duke University | 利用冻结专家对齐的视觉语言模型，实现标签高效的SAR场景理解。 | [#1542](https://github.com/thinson/RS-PaperClaw/issues/1542) |
+
+## 🔎 观察
+
+- 物理先验与辅助信息正成为遥感重建与超分辨的重要约束，有助于提升跨条件泛化。
+- 标签高效学习在SAR等标注稀缺场景受关注，冻结专家对齐提供可行路径。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261018", "source": "oai", "checked_at": "2026-10-20T09:38:19+00:00", "source_complete": true, "candidate_count": 9, "paper_count": 4} -->
+
+---
+
 # [20261017](./202610/20261017.md)
 ## 📌 今日概况
 
@@ -66,44 +101,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261016", "source": "api", "checked_at": "2026-10-19T09:47:02+00:00", "source_complete": true, "candidate_count": 16, "paper_count": 3} -->
-
----
-
-# [20261015](./202610/20261015.md)
-## 📌 今日概况
-
-今日共检索候选论文 16 篇；关键词+LLM 智能匹配遥感交叉论文 8 篇；最终纳入日报 8 篇。
-
-今日研究覆盖可解释性、多时相协调、域适应数据集、基准评测、高光谱去噪、SAR自监督预训练、LLM工作流与灾害响应等方向。整体趋势显示：遥感AI正从单一模型性能转向数据质量、跨域泛化与系统级集成；多光谱与SAR数据的高效利用、无监督/自监督方法受到持续关注；同时，面向实际应用的自动化流程与灾害监测成为新的研究热点。
-
-## ✨ 今日亮点
-
-- 可解释性方法引入Shapley值进行光谱-空间全网格归因，提升多光谱数据通道相关性分析。
-- 多时相反射率协调采用无监督深度多视图伪不变特征学习，实现单调分段线性协调。
-- 发布气候感知大规模卫星图像数据集，推动土地覆盖语义分割的域适应研究。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261015] Spectral-Spatial Interpretation | Ma Haotian, Yang Ruqi, Townsend Philip | Department of Computer Sciences；Department of Forest and Wildlife Ecology；University of Wisconsin--Madison | 提出基于Shapley值的光谱-空间全网格归因方法，用于多光谱数据通道相关性解释。 | [#1492](https://github.com/thinson/RS-PaperClaw/issues/1492) |
-| [20261015] Monotone Piecewise-Linear Harmonization of Multitemporal Multispectral Surface Reflectance With Unsupervised Deep Multiview Pseudoinvariant Features Learning | Lino Garda Denaro, Lin Chia-Hsiang | the Research Center for Geoinformatics, National Research and Innovation Agency (BRIN), Cibinong, Indonesia；Department of Electrical Engineering, National Cheng Kung University (NCKU), Tainan, Taiwan. (；Department of Electrical Engineering, National Cheng Kung University (NCKU), Tainan, Taiwan (R.O.C.) ( | 利用无监督深度多视图伪不变特征学习，实现多时相多光谱地表反射率单调分段线性协调。 | [#1493](https://github.com/thinson/RS-PaperClaw/issues/1493) |
-| [20261015] A large-scale climate-aware satellite image dataset for domain adaptive land-cover semantic segmentation | Liu Songlin, Chen Linwei, Zhang Li, Hu Jun, Fu Ying | School of Remote Sensing Information Engineering, Wuhan University, 430079, Wuhan, Hubei, China；State Key Laboratory of Geo-information Engineering, 710054, Xi’an, Shaanxi, China；Advanced Research Institute of Multidisciplinary Science, Beijing Institute of Technology, 100081, Beijing, China；School of Computer Science and Technology, Beijing Institute of Technology, 100081, Beijing, China；School of Electronics and Communication Engineering, Sun Yat-sen University, 510006, Guangzhou, Guangdong, China | 构建气候感知大规模卫星图像数据集，支持土地覆盖语义分割的域适应基准评测。 | [#1494](https://github.com/thinson/RS-PaperClaw/issues/1494) |
-| [20261015] Digital Typhoon Dataset V3: Benchmarking for Multi-spectral Extension and Analyzing Systematic Bias in Intensity Regression | Kitamoto Asanobu, Victor Le Louarn, Falczuk Noelia, Ngoc Anh Tong, Veleva Anja | National Institute of Informatics, Japan；Typhoon Science and Technology Research Center, Yokohama National University, Japan；University of Artois, France；University of Buenos Aires, Argentina；Hanoi University of Science and Technology, Vietnam；RWTH Aachen University, Germany | 发布Digital Typhoon数据集V3，扩展多光谱基准并分析强度回归中的系统性偏差。 | [#1495](https://github.com/thinson/RS-PaperClaw/issues/1495) |
-| [20261015] Self-Calibrated Subspace Robust PCA for Parameter-Free Removal of Mixed Noise and Line Stripes in Hyperspectral Images | Wang Wenzhe | Qingdao Preschool Education College, Qingdao, China ( | 提出自校准子空间鲁棒PCA方法，实现高光谱图像混合噪声与线状条纹的无参数去除。 | [#1496](https://github.com/thinson/RS-PaperClaw/issues/1496) |
-| [20261015] Data-Efficient ConvNeXt Pretraining for High-Resolution Sentinel-1 GRD SAR Representation Learning | Natsume Yuki, Yun Sang-Ho, Chai Kiat Yeo | College of Computing and Data Science, Nanyang Technological University, Singapore；Earth Observatory of Singapore, Nanyang Technological University, Singapore；Asian School of the Environment, Nanyang Technological University, Singapore；School of Electrical and Electronic Engineering, Nanyang Technological University, Singapore | 面向Sentinel-1 GRD SAR数据，采用数据高效ConvNeXt自监督预训练进行表示学习。 | [#1497](https://github.com/thinson/RS-PaperClaw/issues/1497) |
-| [20261015] ISW-Agent: Integrating LLM-Driven Dialogue with n8n Workflow for Internal Solitary Wave Remote Sensing Image Processing | Zhang Hao, Liu Hengrui, Sun Lina, Meng Junmin | First Institute of Oceanography, Ministry of Natural Resources | 集成LLM对话与n8n工作流，构建内孤立波遥感图像处理自动化代理系统。 | [#1500](https://github.com/thinson/RS-PaperClaw/issues/1500) |
-| [20261015] AI-Driven Disaster Response and Displacement Monitoring | Al-Emadi Noora, Imran Muhammad, Yang Yin, Weber Ingmar, Lashi Fabjan, Rigodanza Gaia, Hajzmanova Ivana, Ofli Ferda | Qatar Computing Research Institute, Hamad Bin Khalifa University, Qatar；College of Science and Engineering, Hamad Bin Khalifa University, Qatar；Saarland University, Germany；United Nations Development Programme, Austria；Internal Displacement Monitoring Centre, Switzerland | 利用卫星影像与机器学习开展灾害响应和人口流离失所监测的AI驱动应用研究。 | [#1502](https://github.com/thinson/RS-PaperClaw/issues/1502) |
-
-## 🔎 观察
-
-- 可解释性与数据协调方法并进，反映遥感AI正从精度导向转向可信与可复用导向。
-- 自监督预训练与无监督域适应成为应对标注稀缺和跨域差异的主流技术路径。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261015", "source": "api", "checked_at": "2026-10-19T10:01:13+00:00", "source_complete": true, "candidate_count": 16, "paper_count": 8} -->
 
 ---
