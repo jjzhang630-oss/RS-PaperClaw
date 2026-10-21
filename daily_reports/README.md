@@ -2,6 +2,40 @@
 
 最近三天日报（最新在前）：
 
+# [20261020](./202610/20261020.md)
+## 📌 今日概况
+
+今日共检索候选论文 9 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
+
+今日三篇论文聚焦多模态遥感目标检测，涵盖光学-SAR融合与多光谱检测两个方向。研究趋势体现为对模态间判别性、空间-光谱等变性与全局-局部动态建模的精细化设计，强调通道选择、严格等变约束与动态特征调制。方法均针对遥感场景中模态对齐与融合效率问题，反映出从简单拼接向结构化交互与物理先验嵌入的演进。
+
+## ✨ 今日亮点
+
+- 光学-SAR融合检测引入通道选择性交互，显式挖掘模态判别性。
+- 多光谱检测提出严格空间-光谱等变检测器，强化几何对齐约束。
+- 多光谱航空检测采用全局-局部动态建模，实现光谱感知融合。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261020] Revealing Inter-Channel Modality Discriminability: Channel Selective Interaction Fusion Network for Optical-SAR Object Detection | Li Haojie, Huang Yuanfei, Song Lingfei, Li Jia, Wang Lizhi | School of Artificial Intelligence, Beijing Normal University; Beijing Key Laboratory of Artificial Intelligence for Education; Engineering Research Center of Intelligent Technology and Educational Application, Ministry of Education, Beijing, China | 提出通道选择性交互融合网络，通过揭示模态间判别性提升光学-SAR目标检测性能。 | [#1548](https://github.com/thinson/RS-PaperClaw/issues/1548) |
+| [20261020] S$^3$E-Det: A Strict Spatial-Spectral Equivariant Detector for Multispectral Object Detection | Zhang Peng, Xu Tingfa, Sui Jinrui, Tian Yuyang, Li Jianan | Beijing Institute of Technology, Beijing, China；Beijing Institute of Technology, Beijing, China (；Big Data and Artificial Intelligence Laboratory, Beijing Institute of Technology Chongqing Innovation Center, Chongqing, China | 设计严格空间-光谱等变检测器，以等变融合与光谱顺序建模增强多光谱目标检测。 | [#1549](https://github.com/thinson/RS-PaperClaw/issues/1549) |
+| [20261020] SGLDet: Spectral-aware Global-Local Dynamic Modeling for Multispectral Aerial Object Detection | Zhang Peng, Han Shuaihao, Xu Tingfa, Li Jianan | Beijing Institute of Technology, Beijing, China (；Beijing Institute of Technology, Beijing, China；Chongqing Innovation Center, Beijing Institute of Technology, Chongqing, China ( | 构建光谱感知全局-局部动态建模框架，用于多光谱航空目标检测的特征调制与融合。 | [#1550](https://github.com/thinson/RS-PaperClaw/issues/1550) |
+
+## 🔎 观察
+
+- 三篇工作均关注模态融合中的结构化设计，表明遥感检测正从朴素融合转向判别性交互与物理约束嵌入。
+- 多光谱方向连续出现等变性与动态建模方案，反映对光谱顺序与空间对齐先验的重视度提升。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261020", "source": "oai", "checked_at": "2026-10-21T09:33:17+00:00", "source_complete": true, "candidate_count": 9, "paper_count": 3} -->
+
+---
+
 # [20261019](./202610/20261019.md)
 ## 📌 今日概况
 
@@ -68,38 +102,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261018", "source": "oai", "checked_at": "2026-10-20T09:38:19+00:00", "source_complete": true, "candidate_count": 9, "paper_count": 4} -->
-
----
-
-# [20261017](./202610/20261017.md)
-## 📌 今日概况
-
-今日共检索候选论文 5 篇；关键词+LLM 智能匹配遥感交叉论文 2 篇；最终纳入日报 2 篇。
-
-今日研究聚焦遥感观测与跟踪中的建模与增强问题。一篇面向多光谱无人机多目标跟踪，提出光谱感知候选增强以改进扩散式MOT；另一篇利用稀疏条件依赖建模遥感观测系统，通过稀疏高斯图模型与贝叶斯推断刻画高光谱辐亮度变量关系。整体呈现从任务级跟踪优化到观测系统统计建模的双向推进。
-
-## ✨ 今日亮点
-
-- 多光谱无人机跟踪引入光谱感知候选增强，服务扩散式多目标跟踪。
-- 遥感观测系统用稀疏高斯图模型刻画变量间条件依赖结构。
-- 两篇工作分别从任务算法与统计建模切入，体现遥感AI方法多样性。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261017] Spectral-Aware Proposal Enhancement for Diffusion-Based Multispectral UAV Multi-Object Tracking | Lin Xu, Xu Tingfa, Li Tianhao, Qin Haolin, Gao Huawei, Xing Jichuan, Li Jianan | Beijing Institute of Technology, Beijing, China；Beijing Institute of Technology Chongqing Innovation Center, Chongqing, China | 面向多光谱无人机多目标跟踪，提出光谱感知候选增强以改进扩散式MOT流程。 | [#1536](https://github.com/thinson/RS-PaperClaw/issues/1536) |
-| [20261017] Exploiting sparse conditional dependence in remote sensing observing systems | Kelvin M. Leung, Susiluoto Jouni, Eckert Regina, Marzouk Youssef | Massachusetts Institute of Technology ( )；NASA Jet Propulsion Laboratory；Massachusetts Institute of Technology | 利用稀疏条件依赖与稀疏高斯图模型，对遥感观测系统高光谱辐亮度进行贝叶斯建模。 | [#1537](https://github.com/thinson/RS-PaperClaw/issues/1537) |
-
-## 🔎 观察
-
-- 多光谱跟踪开始将光谱信息嵌入候选生成阶段，而非仅作后处理融合。
-- 遥感观测系统研究强调变量依赖结构建模，统计推断与任务算法呈互补趋势。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261017", "source": "oai", "checked_at": "2026-10-20T09:36:22+00:00", "source_complete": true, "candidate_count": 5, "paper_count": 2} -->
 
 ---
