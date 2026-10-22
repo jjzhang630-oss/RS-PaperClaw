@@ -2,6 +2,42 @@
 
 最近三天日报（最新在前）：
 
+# [20261021](./202610/20261021.md)
+## 📌 今日概况
+
+今日共检索候选论文 11 篇；关键词+LLM 智能匹配遥感交叉论文 5 篇；最终纳入日报 5 篇。
+
+今日研究覆盖灾害响应、基础模型、开放词汇分割与边界精化等方向。灾害方向关注视觉问答与小型无人机灾损评估，强调证据引导与实战演练；海洋与遥感基础模型侧重异构观测统一表征；数据集方面出现RGB-SAR多模态开放词汇分割资源；分割方法则探索神经细胞自动机用于多类边界精化。整体呈现多模态融合、任务导向与数据基准并进的趋势。
+
+## ✨ 今日亮点
+
+- 灾害视觉问答引入证据引导双系统路由，提升应急推理可靠性。
+- 海洋多模态基础模型面向异构观测统一表征，拓展遥感预训练边界。
+- 开放词汇分割数据集融合RGB-SAR，推动多模态地物理解评测。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261021] DisasterRoute: Evidence-Guided Dual-System Routing for Visual Disaster Question Answering | Zhang Tan, Deng Xing, Zhang Lu, Zhu Xiaofeng, Hu Ping | Hainan University | 提出证据引导双系统路由框架，用于视觉灾害问答，兼顾快速响应与证据推理。 | [#1552](https://github.com/thinson/RS-PaperClaw/issues/1552) |
+| [20261021] YingLan: A Multimodal Ocean Foundation Model for Unified Representation Learning from Heterogeneous Observations | Jia Sen, Wei Siqi, Wang Junyu, Lv Zijun, Liu Pan, Xu Meng, Fu Xiyou, Sun Yuxi, Liu Qiang, Zhang Shuyu, Mu Lin | College of Computer Science and Software Engineering, Shenzhen University；College of Life Sciences and Oceanography, Shenzhen University | 构建海洋多模态基础模型，从异构观测中学习统一时空表征。 | [#1553](https://github.com/thinson/RS-PaperClaw/issues/1553) |
+| [20261021] OpenEarth-OVS44: A Multimodal Remote Sensing Dataset for Open-Vocabulary Segmentation | Wei Yimin, Chen Hongruixuan, Zheng Hao, Liu Hao, Song Jian, Zhu Yuting, Xia Junshi, Yokoya Naoto | University of Tokyo；East China Normal University；Tsinghua University | 发布RGB-SAR多模态开放词汇分割数据集，支持地物理解评测。 | [#1554](https://github.com/thinson/RS-PaperClaw/issues/1554) |
+| [20261021] Key Findings for Small UAS for Post-Disaster Damage Assessment from the CURSE'26 Exercise | Manzini Thomas, Johnson Stephen, Perali Priyankari, Merrick David, Murphy Robin | Texas A\&M University；University of Maryland, College Park；Florida State University | 基于CURSE'26演练总结小型无人机灾后损毁评估的关键发现与经验。 | [#1555](https://github.com/thinson/RS-PaperClaw/issues/1555) |
+| [20261021] Multiclass Boundary Refinement with Neural Cellular Automata for Remote Sensing Land Cover Segmentation | Pascoassis Souza Santos Meira, Gilson Antonio Giraldi, Rafael Duarte Coelho dos Santos | Instituto Nacional de Pesquisas Espaciais (INPE), S ao José dos Campos, SP, Brazil | 利用神经细胞自动机进行多类边界精化，提升遥感土地覆盖分割质量。 | [#1556](https://github.com/thinson/RS-PaperClaw/issues/1556) |
+
+## 🔎 观察
+
+- 灾害响应研究正从单一感知转向证据引导的推理与实战演练结合，强调可解释与可部署。
+- 基础模型与开放词汇数据集同步推进，反映遥感AI向多模态统一表征和零样本泛化演进。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261021", "source": "oai", "checked_at": "2026-10-22T09:35:00+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 5} -->
+
+---
+
 # [20261020](./202610/20261020.md)
 ## 📌 今日概况
 
@@ -67,40 +103,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261019", "source": "oai", "checked_at": "2026-10-20T09:42:11+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 3} -->
-
----
-
-# [20261018](./202610/20261018.md)
-## 📌 今日概况
-
-今日共检索候选论文 9 篇；关键词+LLM 智能匹配遥感交叉论文 4 篇；最终纳入日报 4 篇。
-
-今日研究聚焦遥感数据重建与表征学习：多高度无人机图像超分辨引入物理采样距离条件，MODIS时序重建利用土地覆盖先验，AlphaEarth嵌入分析揭示粗粒化下的稀疏性，SAR场景理解则探索冻结专家对齐以降低标注依赖。整体呈现从物理约束、先验引导到标签高效学习的多元路径。
-
-## ✨ 今日亮点
-
-- 多高度无人机超分辨引入物理地面采样距离条件，提升跨高度泛化。
-- 土地覆盖引导的两阶段网络用于MODIS反射率时序重建，填补数据缺口。
-- 冻结专家对齐实现标签高效SAR场景理解，降低标注需求。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261018] MultiAltitudeSR: Multi-Altitude Agricultural UAV Image Super-Resolution via Physical Ground Sampling Distance Conditioning | Jiang Xintong, Tian Yu, Liu Yixue, Hoyos-Villegas Valerio, Adamchuk Viacheslav, Sun Shangpeng | Department of Bioresource Engineering, McGill University；Michigan State University | 提出多高度农业无人机图像超分辨方法，以物理地面采样距离为条件提升跨高度重建效果。 | [#1539](https://github.com/thinson/RS-PaperClaw/issues/1539) |
-| [20261018] LC-TSRNet: A Land-Cover-Guided Two-Stage Network for Annual MODIS Surface Reflectance Time Series Reconstruction | Zhang Wenjuan, Ma Xuesong, Li Zhen, Wang Meixiang, Yi Caimeng, Pan Jie, Su Nan, Zhang Bing | State Key Laboratory of Remote Sensing and Digital Earth, Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China (；the Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China；the Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China (；School of Artificial Intelligence, Xidian University, Xi'an, China (；College of Information and Communication Engineering, Harbin Engineering University, Harbin, China；the Key Laboratory of Advanced Marine Communication and Information Technology, Ministry of Industry and Information Technology, Harbin Engineering University, Harbin, China (；State Key Laboratory of Remote Sensing and Digital Earth, Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China | 设计土地覆盖引导的两阶段网络，重建年度MODIS地表反射率时序并填补数据缺口。 | [#1540](https://github.com/thinson/RS-PaperClaw/issues/1540) |
-| [20261018] Emergent Sparsity: How Many Effective Variables Survive Coarse-Graining in AlphaEarth Embeddings? | Hirn Johannes | Image Processing Laboratory (IPL), Universitat de València | 分析AlphaEarth嵌入在粗粒化下的有效维度，揭示涌现稀疏性现象。 | [#1541](https://github.com/thinson/RS-PaperClaw/issues/1541) |
-| [20261018] Preserving the Manifold: Frozen Expert Alignment for Label-Efficient SAR Scene Understanding | Eli A. Underwood, I. Taylor McKechnie, Leslie M. Collins | Duke University | 利用冻结专家对齐的视觉语言模型，实现标签高效的SAR场景理解。 | [#1542](https://github.com/thinson/RS-PaperClaw/issues/1542) |
-
-## 🔎 观察
-
-- 物理先验与辅助信息正成为遥感重建与超分辨的重要约束，有助于提升跨条件泛化。
-- 标签高效学习在SAR等标注稀缺场景受关注，冻结专家对齐提供可行路径。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261018", "source": "oai", "checked_at": "2026-10-20T09:38:19+00:00", "source_complete": true, "candidate_count": 9, "paper_count": 4} -->
 
 ---
