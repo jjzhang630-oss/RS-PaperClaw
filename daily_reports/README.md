@@ -2,6 +2,39 @@
 
 最近三天日报（最新在前）：
 
+# [20261022](./202610/20261022.md)
+## 📌 今日概况
+
+今日共检索候选论文 8 篇；关键词+LLM 智能匹配遥感交叉论文 2 篇；最终纳入日报 2 篇。
+
+今日两篇论文分别聚焦星上计算与视觉语言模型综述。前者面向遥感在轨处理，强调任务导向的处理与传输协同，探索语义感知与星地协作以提升时效性；后者系统梳理数据驱动的遥感视觉语言模型，涵盖微调策略、数据集构建与数据中心范式。整体趋势显示，遥感AI正从地面后处理向星上智能前移，同时多模态基础模型的数据与适配方法成为研究热点。
+
+## ✨ 今日亮点
+
+- 在轨计算强调任务导向处理与传输协同，推动星上智能前移。
+- 遥感视觉语言模型综述聚焦数据驱动微调与数据集构建。
+- 两篇工作共同体现遥感AI向时效性与多模态适配发展。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261022] In-Orbit Computing for Remote Sensing: Task-Oriented Processing and Transmission | Zhang Yi, Fei Zesong, Huang Jingxuan, Dang Hua, Luo Jihao, Liang Wenyu, Zhang Haoran, Wang Xinyi | School of Information and Electronics, Beijing Institute of Technology, Beijing, China (；School of Integrated Circuits and Electronics, Beijing Institute of Technology, Beijing, China ( | 面向遥感在轨计算，提出任务导向的处理与传输框架，结合语义感知与星地协作优化时效。 | [#1558](https://github.com/thinson/RS-PaperClaw/issues/1558) |
+| [20261022] Data-Driven Vision-Language Models for Remote Sensing: A Survey | Zhou Yue, Zhao Shujun, Yang Xue, Li Ruigang, Zhang Tianwen, Lan Mengcheng, Chen Chaofeng, Ma Lingfei, He Hongjie, Li Jonathan | School of Automation and Intelligent Sensing, Shanghai Jiao Tong University, Shanghai, China (；School of GeoAI and Hindon STAI Institute, Key Laboratory of Geographic Information Science (Ministry of Education), East China Normal University, Shanghai, China (；Southeast University, China；Southwest Jiaotong University, China；Nanyang Technological University, Singapore；Wuhan University, China；University of Waterloo, Cananda | 系统综述数据驱动遥感视觉语言模型，梳理微调策略、数据集构建与数据中心研究范式。 | [#1559](https://github.com/thinson/RS-PaperClaw/issues/1559) |
+
+## 🔎 观察
+
+- 在轨计算将处理前移至星上，有望缓解下行带宽压力并提升任务响应速度。
+- 视觉语言模型综述显示数据质量与微调策略仍是遥感多模态落地的关键瓶颈。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261022", "source": "oai", "checked_at": "2026-10-23T09:30:41+00:00", "source_complete": true, "candidate_count": 8, "paper_count": 2} -->
+
+---
+
 # [20261021](./202610/20261021.md)
 ## 📌 今日概况
 
@@ -69,39 +102,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261020", "source": "oai", "checked_at": "2026-10-21T09:33:17+00:00", "source_complete": true, "candidate_count": 9, "paper_count": 3} -->
-
----
-
-# [20261019](./202610/20261019.md)
-## 📌 今日概况
-
-今日共检索候选论文 11 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
-
-今日研究呈现三条并行脉络：高光谱分类引入随机潜世界建模以预测未来状态，提升表征学习能力；星上AI处理链覆盖从应用开发到嵌入式部署与任务级编排，强调工程化落地；植被指数提取工具则聚焦ROI空间一致性分析，服务精细农业。整体趋势显示遥感AI正从单一模型创新转向系统级部署与领域专用工具开发，兼顾预测性建模与轻量化实现。
-
-## ✨ 今日亮点
-
-- 高光谱分类探索随机潜世界建模，通过预测未来状态增强表征学习。
-- 星上AI处理链实现从开发到嵌入式部署及任务级编排的全流程覆盖。
-- 植被指数提取工具强调ROI空间一致性，支撑草坪影像精细分析。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261019] See the Future, Classify the Present: Stochastic Latent World Modeling for Hyperspectral Images | Ahmad Muhammad, Vivone Gemine, Hänsch Ronny, Sohaib Ahmed, Mazzara Manuel, Hong Danfeng | the Khanpur Institute of Technology, Khanpur, Pakistan. (；the National Research Council - Institute of Methodologies for Environmental Analysis (CNR-IMAA), Tito, Italy (；Department of SAR Technology, German Aerospace Center (DLR), Germany. (；Institute of Software Development and Engineering, Innopolis University, Innopolis,, Russia. (；School of Automation, Southeast University, Nanjing, China. ( | 提出随机潜世界建模用于高光谱图像分类，通过潜状态预测未来以学习更具判别性的表征。 | [#1544](https://github.com/thinson/RS-PaperClaw/issues/1544) |
-| [20261019] A Generic On-Board AI Processing Chain for Earth Observation: From Application Development to Embedded Deployment and Mission-Level Orchestration | Michel-Fran{\c c}ois Foulon, Liz Ramos Medina, Goudemant Thomas, Szywala Clotilde, Robles Virgile, Petitjean Cl{é}ment, Hankache Ad{è}le, Hlimi Omar | Thales Alenia Space；IRT Saint Exupéry；Tarides | 构建通用星上AI处理链，涵盖应用开发、嵌入式部署与任务级编排，并以野火分割为例验证。 | [#1545](https://github.com/thinson/RS-PaperClaw/issues/1545) |
-| [20261019] A Flexible ROI Analysis Tool for Spatially Consistent Vegetation Index Extraction from Turfgrass Imagery | Ku Kibon, Thai Thanh Tuan, Ahn Jinhyun | Department of Electrical and Computer Engineering, Iowa State University, Ames, IA 50011, USA；Multimedia Communications Laboratory, University of Information Technology, Ho Chi Minh city 70000, Vietnam；Vietnam National University, Ho Chi Minh city 70000, Vietnam；Department of Management Information Systems, Jeju National University, Jeju 63243, Republic of Korea | 开发灵活ROI分析工具，从草坪影像中提取空间一致的植被指数，支持多光谱图像处理。 | [#1546](https://github.com/thinson/RS-PaperClaw/issues/1546) |
-
-## 🔎 观察
-
-- 高光谱分类开始借鉴世界模型思想，从静态特征提取转向动态潜状态预测，可能提升小样本下的泛化能力。
-- 星上AI研究正从算法验证走向部署编排全链路，量化与嵌入式优化成为遥感落地关键环节。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261019", "source": "oai", "checked_at": "2026-10-20T09:42:11+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 3} -->
 
 ---
