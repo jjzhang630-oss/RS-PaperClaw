@@ -2,6 +2,38 @@
 
 最近三天日报（最新在前）：
 
+# [20261025](./202610/20261025.md)
+## 📌 今日概况
+
+今日共检索候选论文 5 篇；关键词+LLM 智能匹配遥感交叉论文 1 篇；最终纳入日报 1 篇。
+
+今日仅一篇论文，聚焦多用户对地观测卫星调度的加权公平性问题。该研究将公平性从传统单目标优化中独立出来，引入加权机制以平衡不同用户需求，反映了卫星资源分配从效率优先向兼顾公平的精细化方向演进。由于样本单一，趋势判断受限，但可见调度研究正关注多利益相关方场景下的分配正义。
+
+## ✨ 今日亮点
+
+- 提出多用户对地观测卫星调度中的加权公平性建模方法
+- 将公平性作为独立优化目标，区别于传统效率导向调度
+- 机构合作体现法国在卫星调度与多智能体公平分配领域的积累
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261025] Weighted Fairness in Multi-User Earth Observation Satellite Scheduling | Lucet Maxime, Benabbou Nawal, Beynier Aurélie, Maudet Nicolas, Picard Gauthier | LIP6, CNRS, Sorbonne Université, Paris, France；ONERA, DTIS, Université de Toulouse, Toulouse, France | 针对多用户对地观测卫星调度，提出加权公平性框架，在资源分配中兼顾不同用户权重与公平性。 | [#1572](https://github.com/thinson/RS-PaperClaw/issues/1572) |
+
+## 🔎 观察
+
+- 该研究将公平性引入卫星调度，暗示多用户共享星座场景下分配正义正成为独立研究维度。
+- 仅单篇论文且偏理论建模，尚难判断加权公平性在真实星座规模下的计算可行性与收益。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261025", "source": "oai", "checked_at": "2026-10-27T10:04:17+00:00", "source_complete": true, "candidate_count": 5, "paper_count": 1} -->
+
+---
+
 # [20261024](./202610/20261024.md)
 ## 📌 今日概况
 
@@ -64,38 +96,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261023", "source": "oai", "checked_at": "2026-10-26T10:25:09+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 6} -->
-
----
-
-# [20261022](./202610/20261022.md)
-## 📌 今日概况
-
-今日共检索候选论文 8 篇；关键词+LLM 智能匹配遥感交叉论文 2 篇；最终纳入日报 2 篇。
-
-今日两篇论文分别聚焦星上计算与视觉语言模型综述。前者面向遥感在轨处理，强调任务导向的处理与传输协同，探索语义感知与星地协作以提升时效性；后者系统梳理数据驱动的遥感视觉语言模型，涵盖微调策略、数据集构建与数据中心范式。整体趋势显示，遥感AI正从地面后处理向星上智能前移，同时多模态基础模型的数据与适配方法成为研究热点。
-
-## ✨ 今日亮点
-
-- 在轨计算强调任务导向处理与传输协同，推动星上智能前移。
-- 遥感视觉语言模型综述聚焦数据驱动微调与数据集构建。
-- 两篇工作共同体现遥感AI向时效性与多模态适配发展。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261022] In-Orbit Computing for Remote Sensing: Task-Oriented Processing and Transmission | Zhang Yi, Fei Zesong, Huang Jingxuan, Dang Hua, Luo Jihao, Liang Wenyu, Zhang Haoran, Wang Xinyi | School of Information and Electronics, Beijing Institute of Technology, Beijing, China (；School of Integrated Circuits and Electronics, Beijing Institute of Technology, Beijing, China ( | 面向遥感在轨计算，提出任务导向的处理与传输框架，结合语义感知与星地协作优化时效。 | [#1558](https://github.com/thinson/RS-PaperClaw/issues/1558) |
-| [20261022] Data-Driven Vision-Language Models for Remote Sensing: A Survey | Zhou Yue, Zhao Shujun, Yang Xue, Li Ruigang, Zhang Tianwen, Lan Mengcheng, Chen Chaofeng, Ma Lingfei, He Hongjie, Li Jonathan | School of Automation and Intelligent Sensing, Shanghai Jiao Tong University, Shanghai, China (；School of GeoAI and Hindon STAI Institute, Key Laboratory of Geographic Information Science (Ministry of Education), East China Normal University, Shanghai, China (；Southeast University, China；Southwest Jiaotong University, China；Nanyang Technological University, Singapore；Wuhan University, China；University of Waterloo, Cananda | 系统综述数据驱动遥感视觉语言模型，梳理微调策略、数据集构建与数据中心研究范式。 | [#1559](https://github.com/thinson/RS-PaperClaw/issues/1559) |
-
-## 🔎 观察
-
-- 在轨计算将处理前移至星上，有望缓解下行带宽压力并提升任务响应速度。
-- 视觉语言模型综述显示数据质量与微调策略仍是遥感多模态落地的关键瓶颈。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261022", "source": "oai", "checked_at": "2026-10-23T09:30:41+00:00", "source_complete": true, "candidate_count": 8, "paper_count": 2} -->
 
 ---
