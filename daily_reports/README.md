@@ -2,6 +2,40 @@
 
 最近三天日报（最新在前）：
 
+# [20261024](./202610/20261024.md)
+## 📌 今日概况
+
+今日共检索候选论文 5 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
+
+今日研究趋势呈现多模态与高效计算并进。少样本遥感场景分类关注方向不变性，通过组件池化与非负分解提升泛化；指代分割引入跨尺度稀疏注意力，强化视觉语言对齐与多尺度特征融合；SAR成像则聚焦开源实现，在CPU、GPU与TPU上追求高吞吐高保真。整体体现遥感AI向轻量化、跨模态与硬件适配方向发展。
+
+## ✨ 今日亮点
+
+- 少样本场景分类利用组件池化实现方向不变性
+- 指代分割采用跨尺度稀疏注意力增强多尺度融合
+- SAR成像开源实现覆盖CPU、GPU与TPU加速
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261024] Component Pooling Trained Across Orientations for Few-Shot Remote Sensing Scene Classification | Yan Bingchen, Guo Wenheng, Zhou Yuye | School of Computer Science and Information Security；Guilin University of Electronic Technology, Guilin, 541004, China；School of Information Engineering；Institute of Disaster Prevention, Langfang, 065201, China；School of Computing & Technology；Asia Pacific University of Technology & Innovation, Kuala Lumpur, 57000, Malaysia | 提出跨方向训练的组件池化方法，结合非负分解提升少样本遥感场景分类性能。 | [#1568](https://github.com/thinson/RS-PaperClaw/issues/1568) |
+| [20261024] Cross-Scale Sparse Attention for Referring Segmentation in Remote Sensing | Li Yuxi, Si Lu, Liao Xia, Shen Yidong, Wei Zheng, Zhang Jun, Yuan Xin | aWestlake Institute for Advanced Study, Hangzhou, Zhejiang, China；bSchool of Engineering, Westlake University, Hangzhou, Zhejiang, China；cBeijing National Research Center for Information Science and Technology (BNRist), Tsinghua；University, Beijing, China；dSchool of Computer Science, Beijing University of Posts and Telecommunications, Beijing, China；eDepartment of Automation, Tsinghua University, Beijing, China | 设计跨尺度稀疏注意力机制，用于遥感指代分割中的视觉语言对齐与多尺度特征融合。 | [#1569](https://github.com/thinson/RS-PaperClaw/issues/1569) |
+| [20261024] FastSAR: High-Throughput, High-Fidelity Open-Source SAR Image Formation on CPUs, GPUs and TPUs | Singerman Paul, Braun Tom | Penn State University | 发布FastSAR开源SAR成像框架，在CPU、GPU和TPU上实现高吞吐高保真处理。 | [#1570](https://github.com/thinson/RS-PaperClaw/issues/1570) |
+
+## 🔎 观察
+
+- 少样本分类与指代分割均强调多尺度与方向适应性，反映遥感视觉任务对几何变换的持续关注。
+- SAR成像开源框架适配多种硬件，表明遥感数据处理正重视可复现性与计算效率的平衡。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261024", "source": "oai", "checked_at": "2026-10-27T10:00:58+00:00", "source_complete": true, "candidate_count": 5, "paper_count": 3} -->
+
+---
+
 # [20261023](./202610/20261023.md)
 ## 📌 今日概况
 
@@ -63,41 +97,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261022", "source": "oai", "checked_at": "2026-10-23T09:30:41+00:00", "source_complete": true, "candidate_count": 8, "paper_count": 2} -->
-
----
-
-# [20261021](./202610/20261021.md)
-## 📌 今日概况
-
-今日共检索候选论文 11 篇；关键词+LLM 智能匹配遥感交叉论文 5 篇；最终纳入日报 5 篇。
-
-今日研究覆盖灾害响应、基础模型、开放词汇分割与边界精化等方向。灾害方向关注视觉问答与小型无人机灾损评估，强调证据引导与实战演练；海洋与遥感基础模型侧重异构观测统一表征；数据集方面出现RGB-SAR多模态开放词汇分割资源；分割方法则探索神经细胞自动机用于多类边界精化。整体呈现多模态融合、任务导向与数据基准并进的趋势。
-
-## ✨ 今日亮点
-
-- 灾害视觉问答引入证据引导双系统路由，提升应急推理可靠性。
-- 海洋多模态基础模型面向异构观测统一表征，拓展遥感预训练边界。
-- 开放词汇分割数据集融合RGB-SAR，推动多模态地物理解评测。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261021] DisasterRoute: Evidence-Guided Dual-System Routing for Visual Disaster Question Answering | Zhang Tan, Deng Xing, Zhang Lu, Zhu Xiaofeng, Hu Ping | Hainan University | 提出证据引导双系统路由框架，用于视觉灾害问答，兼顾快速响应与证据推理。 | [#1552](https://github.com/thinson/RS-PaperClaw/issues/1552) |
-| [20261021] YingLan: A Multimodal Ocean Foundation Model for Unified Representation Learning from Heterogeneous Observations | Jia Sen, Wei Siqi, Wang Junyu, Lv Zijun, Liu Pan, Xu Meng, Fu Xiyou, Sun Yuxi, Liu Qiang, Zhang Shuyu, Mu Lin | College of Computer Science and Software Engineering, Shenzhen University；College of Life Sciences and Oceanography, Shenzhen University | 构建海洋多模态基础模型，从异构观测中学习统一时空表征。 | [#1553](https://github.com/thinson/RS-PaperClaw/issues/1553) |
-| [20261021] OpenEarth-OVS44: A Multimodal Remote Sensing Dataset for Open-Vocabulary Segmentation | Wei Yimin, Chen Hongruixuan, Zheng Hao, Liu Hao, Song Jian, Zhu Yuting, Xia Junshi, Yokoya Naoto | University of Tokyo；East China Normal University；Tsinghua University | 发布RGB-SAR多模态开放词汇分割数据集，支持地物理解评测。 | [#1554](https://github.com/thinson/RS-PaperClaw/issues/1554) |
-| [20261021] Key Findings for Small UAS for Post-Disaster Damage Assessment from the CURSE'26 Exercise | Manzini Thomas, Johnson Stephen, Perali Priyankari, Merrick David, Murphy Robin | Texas A\&M University；University of Maryland, College Park；Florida State University | 基于CURSE'26演练总结小型无人机灾后损毁评估的关键发现与经验。 | [#1555](https://github.com/thinson/RS-PaperClaw/issues/1555) |
-| [20261021] Multiclass Boundary Refinement with Neural Cellular Automata for Remote Sensing Land Cover Segmentation | Pascoassis Souza Santos Meira, Gilson Antonio Giraldi, Rafael Duarte Coelho dos Santos | Instituto Nacional de Pesquisas Espaciais (INPE), S ao José dos Campos, SP, Brazil | 利用神经细胞自动机进行多类边界精化，提升遥感土地覆盖分割质量。 | [#1556](https://github.com/thinson/RS-PaperClaw/issues/1556) |
-
-## 🔎 观察
-
-- 灾害响应研究正从单一感知转向证据引导的推理与实战演练结合，强调可解释与可部署。
-- 基础模型与开放词汇数据集同步推进，反映遥感AI向多模态统一表征和零样本泛化演进。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261021", "source": "oai", "checked_at": "2026-10-22T09:35:00+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 5} -->
 
 ---
