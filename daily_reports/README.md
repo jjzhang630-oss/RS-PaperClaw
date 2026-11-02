@@ -2,6 +2,40 @@
 
 最近三天日报（最新在前）：
 
+# [20261030](./202610/20261030.md)
+## 📌 今日概况
+
+今日共检索候选论文 3 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
+
+今日研究聚焦遥感数据的高效表征与端到端学习。SAR时序作物分类引入物理引导的自监督预训练，结合极化特征与BERT架构提升时序建模能力；高光谱分类提出紧凑布尔对比表示，以二值化方法降低计算复杂度；太阳能潜力评估则探索跳过显式几何建模，直接从卫星影像端到端预测。三篇工作分别从自监督、二值化表征和端到端回归角度，推动遥感任务在标注效率与计算成本上的优化。
+
+## ✨ 今日亮点
+
+- SAR-TS-BERT将物理引导自监督与极化特征结合，用于SAR时序作物分类。
+- 光谱Haar二值化器以紧凑布尔对比表示实现轻量高光谱分类。
+- 端到端学习直接从卫星影像预测屋顶太阳能潜力，无需显式几何。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261030] SAR-TS-BERT: Physics-Guided Self-Supervised Pre-Training With Polarimetric Features for SAR Time-Series Crop Classification | Wang Jieqiu, Zhang Yuhan, Zheng Bo, Zhang Shaoming | College of Surveying and Geo-Informatics, Tongji University, Shanghai, China ( | 提出物理引导自监督预训练框架SAR-TS-BERT，融合极化特征提升SAR时序作物分类性能。 | [#21](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/21) |
+| [20261030] Spectral Haar Binarizer: Compact Boolean Contrast Representations for Hyperspectral Classification | Romaszewski Michał, Głomb Przemysław | Institute of Theoretical and Applied Informatics, Polish Academy of Sciences | 设计光谱Haar二值化器生成紧凑布尔对比表示，用于轻量高光谱分类与特征选择。 | [#22](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/22) |
+| [20261030] An Empirical Study on Learning Rooftop Solar Potential from Satellite Imagery Directly Without Explicit Geometry | Lee Joshua | Skyline High School | 实证研究端到端学习直接从卫星影像预测屋顶太阳能潜力，绕过显式几何建模。 | [#23](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/23) |
+
+## 🔎 观察
+
+- 自监督预训练与物理先验结合成为SAR时序分析趋势，有望缓解标注稀缺问题。
+- 二值化与端到端方法分别从表征压缩和流程简化降低遥感任务计算与建模成本。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261030", "source": "api", "checked_at": "2026-11-02T03:08:59+00:00", "source_complete": true, "candidate_count": 3, "paper_count": 3} -->
+
+---
+
 # [20261029](./202610/20261029.md)
 ## 📌 今日概况
 
@@ -67,42 +101,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261028", "source": "api", "checked_at": "2026-11-02T03:02:32+00:00", "source_complete": true, "candidate_count": 6, "paper_count": 2} -->
-
----
-
-# [20261027](./202610/20261027.md)
-## 📌 今日概况
-
-今日共检索候选论文 10 篇；关键词+LLM 智能匹配遥感交叉论文 6 篇；最终纳入日报 6 篇。
-
-今日论文聚焦遥感智能处理的多环节：从卫星条件扩散模型实现无重建新视角合成，到量化自监督SAR-光学编码器的边缘部署；农业遥感方面，地面到卫星知识蒸馏与AlphaEarth嵌入评估共同关注作物分类的时空迁移性；跨模态检索提出交互无关召回与文本引导重排以提升效率；另有BIOMASS辐射稳定性评估。整体呈现模型轻量化、跨域泛化与基础模型表征分析并进的趋势。
-
-## ✨ 今日亮点
-
-- 卫星条件多视角扩散实现无重建新视角合成与场景外推。
-- 量化自监督SAR-光学编码器在商用x86硬件上实现边缘推理。
-- 地面到卫星知识蒸馏提升作物分类时空偏移下的泛化能力。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261027] GroundControl: Satellite-Conditioned Multi-View Diffusion for Reconstruction-Free Novel View Synthesis | Krishnan Akshay, Turkulainen Matias, Wynn Jamie, Qureshi Zawar, Sayed Mohamed, Garcia-Hernando Guillermo, Vicente Sara, Hays James, Firman Michael, Turmukhambetov Daniyar | Georgia Institute of Technology；Aalto University | 提出卫星条件多视角扩散模型，无需三维重建即可合成新视角并外推场景。 | [#6](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/6) |
-| [20261027] Quantized Edge Inference of a Self-Supervised SAR-Optical Encoder on Commodity x86 Hardware | Sanchez-Leon Christian, Chen Dongming | the Software College, Northeastern University, Shenyang, China ( | 对自监督SAR-光学ViT编码器量化，在商用x86硬件上实现边缘推理。 | [#7](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/7) |
-| [20261027] Ground-to-Satellite Knowledge Distillation for Crop Classification under Temporal and Geographic Shift | Miranda Miro, Sedona Rocco, Marsocci Valerio, Cavallaro Gabriele, Paris Claudia | Jülich Supercomputing Centre；University of Iceland, Iceland；University of Twente (ITC), the Netherlands | 利用地面数据知识蒸馏训练卫星时序模型，提升作物分类时空迁移性能。 | [#8](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/8) |
-| [20261027] Evaluating AlphaEarth Embeddings for Crop Classification: Separability, Temporal Dynamics, and Cross-Regional Transferability | Goyal Priyanka, Sar Maitreyee, Mitra Adway, Sinha Manjira | Department of Artificial Intelligence, Indian Institute of Technology Kharagpur, West Bengal, India；Centre for Atmospheric Sciences, Indian Institute of Technology Delhi, India | 系统评估AlphaEarth嵌入的作物可分性、时序动态与跨区域迁移能力。 | [#9](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/9) |
-| [20261027] Efficient Remote Sensing Image-Text Retrieval via Interaction-Free Recall and Text-Guided Reranking | Chen Xi, Chen Xu, Jia Xiamgyang, Wang Wei, Zhang Xu, Shun Zhenyuan | XI CHEN, School of Computer Science, Wuhan University, China；XU CHEN∗, School of Computer Science, Wuhan University, China；XIANGYANG JIA, School of Computer Science, Wuhan University, China；WEI WANG,Beijing Institute for General Artificial Intelligence (BIGAI), China；XU ZHANG, School of Computer Science, Wuhan University, China；ZHENYUAN SUN, School of Computer Science, Wuhan University, China；Institute for General Artificial Intelligence (BIGAI), Beijing, China; Xu Zhang；Science, Wuhan University, Wuhan, China; Zhenyuan Sun；University, Wuhan, China | 提出交互无关召回与文本引导重排，实现高效遥感图像-文本检索。 | [#10](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/10) |
-| [20261027] Assessing BIOMASS Radiometric Stability using Permanent Scatterers | Manzoni Marco, Salvaterra Francesco, Claudio Maria Prati, Tebaldini Stefano | 原文作者栏未列出单位 | 利用永久散射体评估BIOMASS P波段SAR辐射稳定性。 | [#11](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/11) |
-
-## 🔎 观察
-
-- 扩散模型与知识蒸馏分别从生成与判别路径缓解遥感标注和视角稀疏问题。
-- 边缘量化与高效检索表明遥感AI正从精度优先转向部署效率与实用性平衡。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261027", "source": "api", "checked_at": "2026-10-29T16:59:09+00:00", "source_complete": true, "candidate_count": 10, "paper_count": 6} -->
 
 ---
