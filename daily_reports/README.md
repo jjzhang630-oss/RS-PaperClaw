@@ -2,6 +2,39 @@
 
 最近三天日报（最新在前）：
 
+# [20261028](./202610/20261028.md)
+## 📌 今日概况
+
+今日共检索候选论文 6 篇；关键词+LLM 智能匹配遥感交叉论文 2 篇；最终纳入日报 2 篇。
+
+今日两篇论文分别从统计建模与深度学习两个路径推进遥感数据分析。第一篇针对大湖区高维水陆转换问题，提出贝叶斯差异模型处理多项数据，强调不确定性量化与高维结构建模。第二篇聚焦超高分辨率影像建筑损毁评估，诊断深度模型中的邻域捷径问题，并设计建筑证据插件以提升灾后响应可靠性。整体趋势显示，遥感AI正从单纯精度提升转向模型可解释性、偏差诊断与统计严谨性，尤其关注复杂时空数据与灾害场景下的稳健决策支持。
+
+## ✨ 今日亮点
+
+- 贝叶斯差异模型用于高维多项数据，量化水陆转换不确定性。
+- 诊断建筑损毁评估中的邻域捷径，提出证据插件抑制偏差。
+- 两研究均强调模型可靠性，而非仅追求精度指标提升。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261028] An Analysis of High-Dimensional Land-Water Transitions in the Great Lakes via a Bayesian Discrepancy Model for Multinomial Data | Lee Seulki, Jonathan R. Bradley | Department of Statistics and Data Science, University of Missouri | 提出贝叶斯差异模型分析大湖区高维水陆转换，处理多项数据并量化不确定性。 | [#13](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/13) |
+| [20261028] Neighbourhood shortcuts in building damage assessment from very-high-resolution satellite imagery: diagnosis and a building-evidence plug-in | Guo JianChong, Wan YuTing, Li Kefan, Ma AiLong, Zhong YanFei | State Key Laboratory of Information Engineering in Surveying, Mapping, and Remote Sensing；Wuhan University, 430079, China | 诊断超高分辨率影像建筑损毁评估中的邻域捷径，设计建筑证据插件提升可靠性。 | [#14](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/14) |
+
+## 🔎 观察
+
+- 遥感AI研究正从精度导向转向偏差诊断与不确定性量化，强调模型可信度。
+- 灾害评估场景中，深度模型易受邻域捷径影响，需引入结构化证据约束。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261028", "source": "api", "checked_at": "2026-11-02T03:02:32+00:00", "source_complete": true, "candidate_count": 6, "paper_count": 2} -->
+
+---
+
 # [20261027](./202610/20261027.md)
 ## 📌 今日概况
 
