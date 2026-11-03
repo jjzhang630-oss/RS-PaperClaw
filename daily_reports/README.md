@@ -2,6 +2,44 @@
 
 最近三天日报（最新在前）：
 
+# [20261031](./202610/20261031.md)
+## 📌 今日概况
+
+今日共检索候选论文 10 篇；关键词+LLM 智能匹配遥感交叉论文 7 篇；最终纳入日报 7 篇。
+
+今日研究呈现多源遥感数据与AI方法深度融合的趋势。城市功能知识迁移关注数据不均下的全局表征学习；边缘-云-太空连续体推理强调能耗感知的分布式部署；跨视角指代推理拓展视觉定位至多视角场景。地球嵌入驱动自适应土地单元划分，微波AI实现全天候北极融池比例反演。UAV高光谱数据集支撑海岸栖息地制图，空间不确定性分析则面向预算受限的高光谱场景检测。整体上，方法创新与数据集构建并重，应用覆盖城市、极地、海岸与农业生态。
+
+## ✨ 今日亮点
+
+- 城市功能知识迁移利用全局表征应对数据不均，提升跨城市泛化能力。
+- STLT系统面向边缘-云-太空连续体，实现能耗感知的分布式DNN推理。
+- MASSIMAL数据集提供UAV高光谱与地面真值，服务挪威海岸栖息地制图。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261031] Urban functional knowledge transfer through global representations amid uneven data | Liu Junyuan, Wang Xinglei, Dong Guangsheng, Sha Hao, Zeng Zichao, Deng Zhicheng, Feng Jiazhuang, Wang Xiang, Cheng Tao | a SpaceTimeLab, Department of Civil, Environmental and Geomatic Engineering, University；College London, London, WC1 E 6 BT, United Kingdom b State Key Laboratory of Information Engineering in Surveying, Mapping and Remote；Sensing, Wuhan University, Wuhan, 430079, China | 提出基于POI对齐嵌入的全局表征方法，实现数据不均条件下的城市功能知识跨城迁移。 | [#25](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/25) |
+| [20261031] STLT: A Novel System for Energy-Aware Distributed Inference in the Edge-Cloud-Space Continuum | Stanisic Andrija, Gravara Milos, Juan Luis Herrera, Nastic Stefan | University of Extremadura Spain | 设计STLT系统，在边缘-云-太空连续体中通过DNN分割实现能耗感知的分布式推理。 | [#26](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/26) |
+| [20261031] Grounding Across Views: Cross-View Referring Reasoning for Visual Grounding | Gan Hao, Wang Liuqian, Li Shuang, Gao Yufei, Chao Wentao, Fu Chong, Liu Chengming, Shi Lei | Zhengzhou University, Henan, China | 面向跨视角指代推理，利用视角感知推理与视觉示例实现目标地理定位。 | [#27](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/27) |
+| [20261031] Adaptive Land Units from Earth Embeddings | Alonso Albert, Jamal Jokar Arsanjani, Andres R. Masegosa | Department of Computer Science, Aalborg University, Copenhagen, Denmark；Department of Sustainability and Planning, Aalborg University, Copenhagen, Denmark | 基于地球嵌入与贝叶斯层次聚类，无监督生成自适应土地单元以支撑土地利用建模。 | [#28](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/28) |
+| [20261031] An all-weather microwave-based AI retrieval of pan-Arctic melt pond fraction | Aparício Sara, Driscoll Simon, Mark R. Drinkwater, Flocco Daniela | aCENSE - Center for Environmental and Sustainability Research & CHANGE - Global Change and；Sustainability Institute, NOVA School of Science and Technology, Universidade Nova de Lisboa, Campus de；bDepartment of Applied Mathematics and Theoretical Physics, University of Cambridge, United Kingdom；dDipartimento di Scienze della Terra, dell’Ambiente e delle Risorse, Università degli Studi di Napoli “Federico；eCoNISMA - Consorzio Nazionale Interuniversitario per le Scienze del Mare, Roma, Italy | 利用微波遥感与XGBoost构建全天候AI模型，反演泛北极海冰融池比例。 | [#29](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/29) |
+| [20261031] The MASSIMAL Dataset: UAV Hyperspectral Images and Ground Truth Observations for Coastal Habitat Mapping in Norway | Martin Hansen Skjelvareid, Rinde Eli, Hancke Kasper, Blix Katalin, Galice Guillaume Hoarau, Grometto Nicolo, Maia Røst Kile | ¹UiT The Arctic University of Norway, Hansine Hansens veg 18；²Norwegian Institute for Water Research (NIV A), Sognsveien 72；³Nord University, Universitetsall´een 11 | 发布MASSIMAL数据集，含UAV高光谱影像与地面观测，用于挪威海岸海藻床等栖息地制图。 | [#30](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/30) |
+| [20261031] Spatial Uncertainty Analytics for Budget-Limited Inspection of Hyperspectral Scenes | Sharma Ritesh, Motai Yuichi | RITESH SHARMA,Virginia Commonwealth University, USA；YUICHI MOTAI,Virginia Commonwealth University, USA；Authors’ Contact Information: Ritesh Sharma, Virginia Commonwealth University, Richmond, Virginia, USA | 针对预算受限的高光谱场景检测，提出空间不确定性分析与主动学习采样策略。 | [#31](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/31) |
+
+## 🔎 观察
+
+- 城市功能与土地单元研究均强调表征学习与无监督聚类，反映对数据不均和标签稀缺的应对。
+- 边缘-太空推理与跨视角定位表明遥感AI正从单源静态分析转向多节点动态协同。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261031", "source": "api", "checked_at": "2026-11-03T16:02:36+00:00", "source_complete": true, "candidate_count": 10, "paper_count": 7} -->
+
+---
+
 # [20261030](./202610/20261030.md)
 ## 📌 今日概况
 
@@ -68,38 +106,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261029", "source": "api", "checked_at": "2026-11-02T03:05:07+00:00", "source_complete": true, "candidate_count": 13, "paper_count": 4} -->
-
----
-
-# [20261028](./202610/20261028.md)
-## 📌 今日概况
-
-今日共检索候选论文 6 篇；关键词+LLM 智能匹配遥感交叉论文 2 篇；最终纳入日报 2 篇。
-
-今日两篇论文分别从统计建模与深度学习两个路径推进遥感数据分析。第一篇针对大湖区高维水陆转换问题，提出贝叶斯差异模型处理多项数据，强调不确定性量化与高维结构建模。第二篇聚焦超高分辨率影像建筑损毁评估，诊断深度模型中的邻域捷径问题，并设计建筑证据插件以提升灾后响应可靠性。整体趋势显示，遥感AI正从单纯精度提升转向模型可解释性、偏差诊断与统计严谨性，尤其关注复杂时空数据与灾害场景下的稳健决策支持。
-
-## ✨ 今日亮点
-
-- 贝叶斯差异模型用于高维多项数据，量化水陆转换不确定性。
-- 诊断建筑损毁评估中的邻域捷径，提出证据插件抑制偏差。
-- 两研究均强调模型可靠性，而非仅追求精度指标提升。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261028] An Analysis of High-Dimensional Land-Water Transitions in the Great Lakes via a Bayesian Discrepancy Model for Multinomial Data | Lee Seulki, Jonathan R. Bradley | Department of Statistics and Data Science, University of Missouri | 提出贝叶斯差异模型分析大湖区高维水陆转换，处理多项数据并量化不确定性。 | [#13](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/13) |
-| [20261028] Neighbourhood shortcuts in building damage assessment from very-high-resolution satellite imagery: diagnosis and a building-evidence plug-in | Guo JianChong, Wan YuTing, Li Kefan, Ma AiLong, Zhong YanFei | State Key Laboratory of Information Engineering in Surveying, Mapping, and Remote Sensing；Wuhan University, 430079, China | 诊断超高分辨率影像建筑损毁评估中的邻域捷径，设计建筑证据插件提升可靠性。 | [#14](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/14) |
-
-## 🔎 观察
-
-- 遥感AI研究正从精度导向转向偏差诊断与不确定性量化，强调模型可信度。
-- 灾害评估场景中，深度模型易受邻域捷径影响，需引入结构化证据约束。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261028", "source": "api", "checked_at": "2026-11-02T03:02:32+00:00", "source_complete": true, "candidate_count": 6, "paper_count": 2} -->
 
 ---
