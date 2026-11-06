@@ -2,6 +2,44 @@
 
 最近三天日报（最新在前）：
 
+# [20261104](./202611/20261104.md)
+## 📌 今日概况
+
+今日共检索候选论文 16 篇；关键词+LLM 智能匹配遥感交叉论文 7 篇；最终纳入日报 7 篇。
+
+今日研究趋势呈现多模态融合与自监督学习在遥感领域的深化应用。一方面，面向城市管理与规划，细粒度视觉推理基准和生成式土地利用制图受到关注；另一方面，跨模态检索、SAR基础模型及高光谱成分预测等任务持续探索自监督与概率嵌入方法。此外，全色锐化方向出现面向传输与跨传感器实时适应的新框架，强调机载处理与泛化能力。整体上，研究兼顾基础模型构建与下游任务适配，并注重实际部署约束。
+
+## ✨ 今日亮点
+
+- 细粒度视觉推理基准聚焦城市管理，推动多模态大模型在无人机影像上的评估。
+- SAR基础模型结合全局与局部语义一致性，提升自监督表征质量。
+- 全色锐化研究转向传输导向与跨传感器实时适应，关注机载部署。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261104] Benchmarking Fine-Grained Visual Reasoning for Remote Sensing in Urban Management | Zhang Jiawei, Cai Rizhao, Guan Dayan | School of Electronics and Information Engineering, Harbin Institute of Technology | 构建面向城市管理的遥感细粒度视觉推理基准，基于无人机影像评估多模态大模型。 | [#57](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/57) |
+| [20261104] CAPE-JEPA - Cross-modal Adversarial Probabilistic Embedding JEPA | Junghare Aniket, Banerjee Biplab | Biplab Banerjee；Indian Institute of T echnology Bombay | 提出跨模态对抗概率嵌入JEPA，用于遥感跨模态检索，结合概率嵌入与对抗正则化。 | [#58](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/58) |
+| [20261104] TOP: Transmission-Oriented Remote Sensing Pansharpening | Cao Zi-Han, Liang Jing-Ze, Wu Shao-Jie, Di Jin-Cheng, Deng Liang-Jian, Vivone Gemine | University of Electronic Science and Technology of China, Chengdu, Sichuan, China (；University of Electronic Science and Technology of China, Chengdu, Sichuan, China；the Multi-Hazard Early Warning Key Laboratory of Sichuan Province, Chengdu, Sichuan, China (；the National Research Council of Italy, Institute of Integrated Methodologies for Earth Observation (CNR-IMIOT), Tito, Italy ( | 提出传输导向的全色锐化方法，面向星上处理优化图像融合的传输效率。 | [#59](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/59) |
+| [20261104] XuanJian-DINOSAR: A SAR Foundation Model Based on Global and Local Semantic Consistency | Wu Chunxiao, Huang Huixin, Pan Jialei, Liang Qiang, Wu Tao, Wu Cheng, Huang Long, Li Yuanji, Cheng Qiang, Liu Aifang, Xia Linghao, Zhang Rui | The a uthors are with the Nanjing Institute of Electronic Technology and；National Key Laboratory of Radar Detection and Sensing, Nanjing 210039 | 构建SAR基础模型，基于DINOv2与掩码图像建模，强调全局与局部语义一致性。 | [#60](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/60) |
+| [20261104] Many Pixels, One Composition: Self-Supervised Spectra for Specimen-Level Prediction | Tetoula-Tsonga Eleftheria, Arvanitakis George, Giannakas Theodoros | Institute of Communication and Computer Systems | 利用自监督光谱学习进行样本级元素成分预测，基于高光谱成像与注意力回归。 | [#61](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/61) |
+| [20261104] Generative AI for urban planning: synthesizing land-use maps with satellite imagery via DualControlNet | Song Qingqi, Chen Yuzhou, Hu Lingqian, Wang Shenhao | Department of Urban and Regional Planning, University of Florida；College of Architecture, Texas A&M University | 利用DualControlNet生成式AI，结合卫星影像合成土地利用图以辅助城市规划。 | [#62](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/62) |
+| [20261104] ReTailor: A Residual Feature Tailoring Framework for Real-Time Cross-Sensor Pansharpening Adaptation | Liang Jing-Ze, Xiao Wei-Jie, Cao Zi-Han, Li Yang-Dong, Hu Tian-Yi, Deng Liang-Jian | University of Electronic Science and Technology of China；Multi-Hazard Early Warning Key Laboratory of Sichuan Province | 提出残差特征裁剪框架，实现跨传感器全色锐化的实时自监督适应。 | [#63](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/63) |
+
+## 🔎 观察
+
+- 基础模型与自监督学习正从通用视觉向SAR、高光谱等遥感模态渗透，强调语义一致性。
+- 全色锐化研究明显关注部署约束，传输效率与跨传感器实时适应成为新发力点。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261104", "source": "api", "checked_at": "2026-11-06T16:00:53+00:00", "source_complete": true, "candidate_count": 16, "paper_count": 7} -->
+
+---
+
 # [20261103](./202611/20261103.md)
 ## 📌 今日概况
 
@@ -79,39 +117,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261102", "source": "api", "checked_at": "2026-11-03T16:12:45+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 9} -->
-
----
-
-# [20261101](./202611/20261101.md)
-## 📌 今日概况
-
-今日共检索候选论文 8 篇；关键词+LLM 智能匹配遥感交叉论文 3 篇；最终纳入日报 3 篇。
-
-今日研究聚焦遥感基础模型与多模态问答。三篇论文分别探索地表变化预测的嵌入空间建模、Sentinel-2土地覆盖的非生成式语言问答，以及异构光谱图像的统一基础模型。趋势显示，遥感AI正从单一任务模型转向跨传感器、跨模态的通用表征学习，同时强调预测与问答的可信度与校准性。
-
-## ✨ 今日亮点
-
-- 地表变化预测转向嵌入空间时序建模，提升泛化性。
-- Sentinel-2问答采用非生成式校准方法，增强答案可靠性。
-- 异构光谱统一基础模型实现跨传感器迁移与多源融合。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261101] Forecasting Earth Surface Change in Embedding Space | Li Jingtao, Jaffer Sadiq, Madhavapeddy Anil, Sousa Pedro, Ortiz Anthony, Gao Kyle, Feng Zhengpeng, Zhong Yanfei, White Kevin, Keshav Srinivasan | Department of Computer Science, University of Cambridge；Microsoft AI for Good Research Lab；Aalto University；Wuhan University | 提出在嵌入空间进行地表变化时序预测，利用基础模型表征提升跨区域泛化能力。 | [#33](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/33) |
-| [20261101] EarthJev: Calibrated, Non-Generative Answers to Natural-Language Questions about Sentinel-2 Land Cover | Benfenati Domenico, Antonio Maria Rinaldi, Tommasino Cristian | Department of Electrical Engineering and Information Technology (DIETI), University of Naples Federico II, Via Claudio, 21, Naples, 80125, Italy | 构建EarthJev系统，为Sentinel-2土地覆盖提供校准的非生成式自然语言问答。 | [#34](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/34) |
-| [20261101] SpecUltra: A Unified Foundation Model for Heterogeneous Spectral Images | Kong Weili, Liu Baisen, Bi Xiaojun, Pei Jiaming | School of Information and Communication Engineering, Harbin Engineering University, Harbin 150001, China；School of Electronic and Information Engineering, Heilongjiang Institute of Technology, Harbin 150050, China；School of Information Engineering, Minzu University of China, Beijing 100081, China；School of Computer Science, The University of Sydney, Sydney, NSW 2006, Australia | 提出SpecUltra统一基础模型，处理高光谱与多光谱异构图像并支持跨传感器迁移。 | [#35](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/35) |
-
-## 🔎 观察
-
-- 遥感基础模型正从单模态向异构光谱统一建模演进，跨传感器迁移成为关键能力。
-- 非生成式问答与嵌入空间预测均强调可信度，反映遥感AI对校准与泛化的重视。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261101", "source": "api", "checked_at": "2026-11-03T16:09:22+00:00", "source_complete": true, "candidate_count": 8, "paper_count": 3} -->
 
 ---
