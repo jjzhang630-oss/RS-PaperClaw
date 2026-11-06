@@ -2,6 +2,43 @@
 
 最近三天日报（最新在前）：
 
+# [20261105](./202611/20261105.md)
+## 📌 今日概况
+
+今日共检索候选论文 14 篇；关键词+LLM 智能匹配遥感交叉论文 6 篇；最终纳入日报 6 篇。
+
+今日研究覆盖热带气旋临近预报、全国尺度树种制图、开放词汇分割、地理基础模型在高分辨率影像上的评测、跨视角三维重建以及空间物理边界检测。整体趋势显示，深度学习继续向多模态融合与开放场景扩展，同时针对基础模型在遥感领域的适用性开展系统性基准测试。应用导向明显，涵盖气象灾害、森林生态与空间天气。
+
+## ✨ 今日亮点
+
+- 热带气旋风场与强度临近预报利用静止卫星影像和神经网络实现。
+- 瑞士全国尺度树种组成制图融合高分辨率航空影像与多模态数据。
+- TerraMesh-Masks推动地球观测开放词汇分割与多模态数据集构建。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261105] Nowcasting of Tropical Cyclone Wind Fields and Intensity from Geostationary Imagery | Donike Simon, Nath Pritthijit, Radin Cristina, Avenas Arthur, Cartuyvels Ruben, Diaz Emiliano, William K. Jones, Jungbluth Anna | Earth Systems Lab；University of Valencia；University of Cambridge；Max Planck Institute for Marine Microbiology, Bremen, Germany；Imperial College London | 基于静止卫星影像与神经网络，开展热带气旋风场和强度的临近预报研究。 | [#65](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/65) |
+| [20261105] National-scale mapping of tree species composition in Switzerland from high-resolution aerial imagery and multimodal data | Zhou Yixin, Ferrari Luca, Verena C. Griess, Rehush Nataliia, Schindler Konrad, Beloiu Mirela | ETH Swiss Geo Lab；Ecosystem Ecology Group, Swiss Federal Research Institute WSL | 利用高分辨率航空影像与多模态数据，实现瑞士全国尺度树种组成制图。 | [#66](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/66) |
+| [20261105] TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation | Blumenstiel Benedikt, Devimeux Hugues, Jakubik Johannes, Schindler Konrad | IBM Research | 提出TerraMesh-Masks，面向地球观测的开放词汇分割与多模态数据集。 | [#67](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/67) |
+| [20261105] When GeoFMs Meet VHR: Benchmarking Foundation Models on Very High Resolution Earth Observation Imagery | Kshitij Raj Sharma, Adorni Pierre, Pham Minh-Tan, Tiede Dirk, Lefèvre Sébastien | Universit\'e Bretagne Sud, IRISA, France；University of Salzburg, Department of Geoinformatics, Austria；UiT The Arctic University of Norway, Troms, Norway | 系统评测地理基础模型在甚高分辨率地球观测影像上的迁移与预训练表现。 | [#68](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/68) |
+| [20261105] Georeferenced Cross-View 3D Reconstruction from Ground and Satellite Images | David G. Shatwell, Shah Mubarak | Institute of Artificial Intelligence, University of Central Florida；only the local scene geometry, but also localizing every camera center and 3 D | 从地面与卫星影像进行地理参考的跨视角三维重建，并估计相机位姿。 | [#69](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/69) |
+| [20261105] MP-DualNet: A Dual-Branch Deep Learning Approach for Magnetopause Boundary Detection Using Simulated SXI Images | Zhong Cheng, Yang Zhongwei, Sun Tianran, Huang Chengyan, Liu Jiajia, Guo Jingnan, Wang Yuming, Wang Chi | National Key Laboratory of Deep Space Exploration/School of Earth and Space Sciences, University of；State Key Laboratory of Solar Activity and Space Weather, National Space Science Center, Chinese；Academy of Sciences, Beijing 100190, China；CAS Center for Excellence in Comparative Planetology/CAS Key Laboratory of Geospace；Environment/Mengcheng National Geophysical Observatory, University of Science and Technology of | 利用模拟SXI图像与双分支网络，检测磁层顶边界以服务SMILE任务。 | [#70](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/70) |
+
+## 🔎 观察
+
+- 基础模型评测与开放词汇分割同日出现，反映遥感社区正从模型构建转向适用性验证与开放场景适配。
+- 多模态数据融合成为高频手段，覆盖森林制图与三维重建，显示单一影像模态的局限正被系统性弥补。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261105", "source": "api", "checked_at": "2026-11-06T16:06:35+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 6} -->
+
+---
+
 # [20261104](./202611/20261104.md)
 ## 📌 今日概况
 
@@ -77,45 +114,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261103", "source": "api", "checked_at": "2026-11-04T16:04:49+00:00", "source_complete": true, "candidate_count": 12, "paper_count": 9} -->
-
----
-
-# [20261102](./202611/20261102.md)
-## 📌 今日概况
-
-今日共检索候选论文 14 篇；关键词+LLM 智能匹配遥感交叉论文 9 篇；最终纳入日报 9 篇。
-
-今日论文聚焦遥感领域多类学习范式与任务适配。域泛化、类增量学习与测试时训练被用于提升跨域与动态场景下的分割和分类鲁棒性；视觉语言模型与决策模型结合，推动对地观测从感知走向可解释决策；多源融合与低层融合-高层语义衔接成为分类与理解的关键路径；扩散模型和水下图像复原拓展了无人机浅水测绘能力；超分辨率在作物表型中的保真度评估受到关注。整体呈现从单一任务模型向跨域、跨模态、跨层级协同与决策化演进的趋势。
-
-## ✨ 今日亮点
-
-- 域泛化与类增量学习并行推进，提升遥感模型跨域与动态场景适应性。
-- 视觉语言模型与决策模型结合，推动对地观测从感知走向可解释决策。
-- 多源融合与低层-高层语义衔接成为遥感分类与理解的关键路径。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261102] ASCoR: Asymmetric Semantic-Spatial Learning for Remote Sensing Domain Generalization | Wang Zitong, Lyu Shuchang, Li Meng, Wang Qiang, Cheng Guangliang, Shi Zhenwei | Beihang University；University of Science and Technology Beijing；University of Liverpool；Guangdong Electronic Information Engineering Research Institute, University of Electronic Science and Technology of China | 提出非对称语义-空间学习框架，面向遥感域泛化分割，兼顾语义与空间特征对齐。 | [#37](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/37) |
-| [20261102] EO-Jev: Decision Model for Earth Observation | Mohamed Atef Abouelhadid, Diaa Addeen Abuhani, Muhammad Akhtar Munir, Fahad Shahbaz Khan, Khan Salman | Mohamed Bin Zayed University of Artificial Intelligence；Massachusetts Institute of Technology；Australian National University；Linköping University Sweden | 构建对地观测决策模型，结合视觉语言模型与低秩微调，强调校准与决策可靠性。 | [#38](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/38) |
-| [20261102] HyperFlow: Class-Incremental Semantic Change Detection via Hyperbolic Flow | Béchaz Manon, Buecher Léo, Dalsasso Emanuele, Tomoiaga Ciprian, Jayet Patrick, Detyniecki Marcin, Chapel Laetitia, Drumetz Lucas, Courty Nicolas, Tuia Devis | EPFL, Switzerland; 2 Universit´e de Bretagne Sud, France; 3 IRISA, France 4 INRIA, France；AXA GDAI Research, Switzerland; 6 Institut Agro Rennes-Angers, France 7 Lab-STICC | 利用双曲空间流建模类增量语义变化检测，关注地类转移的层次结构。 | [#39](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/39) |
-| [20261102] KAUSTics-Net: Diffusion-Based Through-Water UAV Restoration with a Semi-Synthetic Dataset | Scilla Dario, Omar A. Lopez, Johansen Kasper, Brian O. Nieuwenhuis, Matthew F. McCabe | and Livability Initiative, King Abdullah University of Science and Technology；Red Sea Research Center, Biological and Environmental Science and；Engineering Division, King Abdullah University of Science and Technology | 基于扩散模型与半合成数据集，实现无人机穿水影像复原以支持浅水测绘。 | [#40](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/40) |
-| [20261102] Cross-Layer Refinement and Frequency-aware Fusion Network for Multi-Source Remote Sensing Image Classification | Xiao Wenhan, Gong Chuanzheng, Gao Feng, Dong Junyu, Du Qian | State Key Laboratory of Physical Oceanography, Ocean University of China, Qingdao, China；Department of Electrical and Computer Engineering, Mississippi State University, Starkville, MS USA. and elevation information [4] | 设计跨层细化与频率感知融合网络，用于多源遥感图像分类。 | [#41](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/41) |
-| [20261102] Shared-Pattern Collaborative Network for Multi-Source Remote Sensing Data Classification | Yang Chenfang, Gong Chuanzheng, Gao Feng, Dong Junyu, Du Qian | State Key Laboratory of Physical Oceanography, Ocean University of China, Qingdao, China. (；Department of Electrical and Computer Engineering, Mississippi State University, Starkville, MS USA | 提出共享模式协同网络，通过跨模态学习与特征融合实现多源遥感分类。 | [#42](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/42) |
-| [20261102] Bridging Low-Level Image Fusion and High-Level Semantic Understanding | Dong Guangyuan, Shen Lingdong, Zhang Xudong, Jing Haodong, Wang Haoyu, Li Zihao, Ying Zonghao, Song Ziyu, Liu Shenghao, Luo Jiachen, Zhang Hao | Peking University；Xi'an Jiaotong University；Nankai University；Institute of Automation, Chinese Academy of Sciences | 衔接低层图像融合与高层语义理解，借助视觉语言模型与对比学习增强融合语义性。 | [#43](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/43) |
-| [20261102] Performance evaluation of super-resolution techniques for characterization and phenotyping of commodity crops using multispectral imagery | Karukayil Abhiram, João F. C. Mota, Vásquez-Guevara Mateo, Arevalo-Ramirez Tito, Fernando Auat Cheein | School of Engineering and Physical Sciences, Heriot-Watt University, Edinburgh, UK；Department of Electrical Engineering, Department of Mechanical Engineering and Metallurgy, School of Engineering, Faculty of；School of Mathematical and Computer Sciences, Heriot-Watt University, Edinburgh, UK；Harper Adams University, England, UK | 评估多光谱超分辨率对作物表征与表型的影响，关注光谱保真度。 | [#44](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/44) |
-| [20261102] Spectral-spatial vision test-time training for hyperspectral image classification | Zhao Xiang | College of Mathematical Sciences, Harbin Engineering University | 将视觉测试时训练引入高光谱分类，以自监督与谱空表征提升泛化能力。 | [#45](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/45) |
-
-## 🔎 观察
-
-- 域泛化、类增量与测试时训练集中出现，反映遥感模型正从静态封闭场景转向动态开放环境。
-- 多源融合论文强调跨层与跨模态协同，表明单一模态或单层特征已难满足复杂分类需求。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261102", "source": "api", "checked_at": "2026-11-03T16:12:45+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 9} -->
 
 ---
