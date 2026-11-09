@@ -2,6 +2,42 @@
 
 最近三天日报（最新在前）：
 
+# [20261106](./202611/20261106.md)
+## 📌 今日概况
+
+今日共检索候选论文 11 篇；关键词+LLM 智能匹配遥感交叉论文 5 篇；最终纳入日报 5 篇。
+
+今日研究覆盖超分辨率地形模型辅助GEDI定位校正、无人机浅水图像零样本评估与恢复、无人机视觉畜牧检测、高光谱目标检测系统瓶颈量化，以及免训练多模态大模型超高分遥感证据获取。整体呈现两大趋势：一是面向具体遥感任务（如GEDI定位、高光谱检测）的系统级误差与性能分析受到关注；二是无人机与多模态大模型结合，推动零样本、免训练方法在复杂场景中的实用化。
+
+## ✨ 今日亮点
+
+- 超分DTM在波束级与机载LiDAR校正一致，但足迹级不一致
+- 零样本基准评估统一多模态模型浅水无人机图像恢复能力
+- 免训练GeoJeV用空间概率实现超高分遥感高效证据获取
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261106] Super-resolved digital terrain models for GEDI geolocation correction: agreement with airborne LiDAR DTM-based corrections at the beam level, not the footprint level | Yuda Natsuki, Shirota Shinichiro | Hitotsubashi University, 2-1 Naka, Kunitachi, Tokyo 186-8601, Japan | 评估超分DTM用于GEDI定位校正，发现与机载LiDAR校正仅在波束级一致，足迹级不一致。 | [#72](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/72) |
+| [20261106] Zero-Shot Benchmarking of Unified Multimodal Models for Shallow-Water UAV Image Distortion Assessment and Restoration | Scilla Dario, Omar A. Lopez, Rosso Mattia, Johansen Kasper, Matthew F. McCabe | and Livability Initiative, King Abdullah University of Science and Technology；Abdullah University of Science and Technology, Thuwal 23955-6900, Saudi | 对统一多模态模型进行零样本基准测试，评估浅水无人机图像畸变评估与恢复性能。 | [#73](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/73) |
+| [20261106] UAV-Based Computer Vision for Cattle Detection and Feed Bunk Spatial Analysis | Pedro Oliveira Torrente, Diego Giaretta de Paulo, Lucas Pascotti Valem, Yan Jianglong, Everton Castelão Tetila, Jayme Garcia Arnal Barbedo, Zhao Liang | Institute of Mathematics and Computer Science (ICMC), University of São Paulo (USP), São Carlos - SP, Brazil；the Federal University of Grande Dourados (UFGD), Dourados - MS, Brazil；the Faculty of Philosophy, Sciences and Letters at Ribeir ao Preto (FFCLRP); University of São Paulo (USP), Ribeir ao Preto - SP, Brazil | 利用无人机计算机视觉检测牛只并分析饲喂槽空间分布，服务精准畜牧管理。 | [#74](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/74) |
+| [20261106] Quantifying System-Level Performance Bottlenecks in Hyperspectral Target Detection | Cañas Chase, John P. Kerekes | Imaging Science, Rochester Institute of Technology, Rochester, NY, 14623 | 量化高光谱目标检测的系统级性能瓶颈，通过敏感性分析与ROC曲线识别关键限制因素。 | [#75](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/75) |
+| [20261106] GeoJeV: Unified Spatial Probability for Training-Free Efficient Evidence Acquisition in Ultra-High-Resolution Remote Sensing | Niu Xinyi, Chen Lingfeng, Zhang Jiehua, Hu Panhe, Liu Li, Liu Zhen, Liu Yongxiang | College of Electronic Science and Technology, National University of Defense Technology, Changsha, Hunan, China | 提出免训练GeoJeV框架，以统一空间概率实现超高分遥感区域级证据高效获取。 | [#76](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/76) |
+
+## 🔎 观察
+
+- 超分DTM辅助GEDI校正的尺度依赖表明，数据产品验证需明确波束与足迹层级差异。
+- 免训练多模态方法在超高分遥感中兴起，降低标注依赖但需关注空间概率可靠性。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261106", "source": "api", "checked_at": "2026-11-09T16:04:38+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 5} -->
+
+---
+
 # [20261105](./202611/20261105.md)
 ## 📌 今日概况
 
@@ -74,45 +110,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261104", "source": "api", "checked_at": "2026-11-06T16:00:53+00:00", "source_complete": true, "candidate_count": 16, "paper_count": 7} -->
-
----
-
-# [20261103](./202611/20261103.md)
-## 📌 今日概况
-
-今日共检索候选论文 12 篇；关键词+LLM 智能匹配遥感交叉论文 9 篇；最终纳入日报 9 篇。
-
-今日研究呈现多模态融合与基础模型驱动的趋势。遥感视觉任务从监督分割转向免训练、零样本范式，如光伏模块制图与热带作物分割基准。水文与灾害领域强调嵌入表示与多智能体推理，结合地球观测嵌入、流域自监督学习及LLM调度。在线高精地图构建探索卫星先验与相机融合的鲁棒性。整体上，研究更注重可扩展性、跨域泛化与物理约束嵌入。
-
-## ✨ 今日亮点
-
-- 免训练视觉基础模型用于多视角无人机光伏制图，实现零样本高保真映射。
-- 流域自监督嵌入Basin2Vec支持可扩展水文建模与径流预测。
-- LLM辅助自适应启发式搜索优化敏捷地球观测卫星调度。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261103] PLANTEUR: A Crop-Type Segmentation Benchmark for Tropical Regions | Wolters Piper, Tseng Gabriel, Bastani Favyen, Redmon Joseph, Zhang Yawen, Sablon Hadrien, Shah Ando | Allen Institute for AI | 构建热带地区作物类型分割基准，融合Sentinel-1/2多源卫星影像评估模型泛化性。 | [#47](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/47) |
-| [20261103] Fusing Earth observation embeddings and spaceborne terrain with meteorological forcing for flood peak depth prediction from high-water marks | Zhou Wen, Wang Shaowen, Lall Upmanu, Merwade Venkatesh, Ye Dingqi | Department of Geography and Geographic Information Science；CyberGIS Center for Advanced Digital and Spatial Studies, and；Siebel School of Computing and Data Science；University of Illinois Urbana--Champaign, Urbana, IL, USA；School of Complex Adaptive Systems, College of Global Futures；Arizona State University, Tempe, AZ, USA；Lyles School of Civil and Construction Engineering；Purdue University, West Lafayette, IN, USA | 融合地球观测嵌入、星载地形与气象强迫，从高水位标记预测洪水峰值深度。 | [#48](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/48) |
-| [20261103] Basin2Vec: Learning Basin-Centric Embeddings for Scalable Hydrological Modeling | Talha Muhammad, Liu Xiaofeng, Yang Yuan, Tan Pang-Ning, A. Pouyan Nejadhashemi | Michigan State University；University of Michigan；University of California, San Diego | 提出Basin2Vec自监督学习流域中心嵌入，支撑可扩展水文建模与径流预测。 | [#49](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/49) |
-| [20261103] High-fidelity training-free photovoltaic module mapping from multi-view UAV imagery | Duana WenHao, Chena Qi, Zhang Penglei, Deng Ruizhe, Guo Zhiling, Zhang Haoran, Chen Yuntian | aSchool of Geography and Information Engineering, China University of Geosciences；bNingbo Institute of Digital Twin, Eastern Institute of；cZhejiang Key Laboratory of Industrial Intelligence and Digital Twin, Eastern Institute of；dDepartment of Building Environment and Energy Engineering, The Hong Kong；Polytechnic University, Kowloon, Hong Kong, China；eSchool of Urban Planning and Design, Peking University, Shenzhen, 518055, China | 基于多视角无人机影像与视觉基础模型，免训练实现高保真光伏模块零样本制图。 | [#50](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/50) |
-| [20261103] GeoFaham: Domain-Specialized Multi-Agent Geospatial Analytics for Disaster Response | Muhammad Sohail Danish, Gilles Q. Hacheme, Zaytar Akram, Satej S. Soman, Becker-Reshef Inbal, Juan Lavista Ferres, Khan Salman, Girmaw Abebe Tadesse | AI for Good Lab；Microsoft AI for Good Lab；Mohamed bin Zayed University of Artificial Intelligence | 面向灾害响应构建领域专用多智能体地理空间分析框架，集成LLM与空间数据工作流。 | [#51](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/51) |
-| [20261103] Using GeoAI and machine learning tools for consistent high-resolution land cover mapping based on time-series NAIP imagery | Liu Jie, Tang Xusheng, Wang Chao, Yan Zhengxiao, Dai Yuchen, Zhang Qi, Song Conghe | Department of Geography and Environment, University；Department of City and Regional Planning, University；Department of Geography, Hong Kong Baptist University；Department of Earth, Marine and Environmental Sciences；University of North Carolina at Chapel Hill, Chapel Hill | 利用GeoAI与机器学习工具，基于时序NAIP影像实现一致的高分辨率土地覆盖制图。 | [#52](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/52) |
-| [20261103] Large Language Model-Assisted Adaptive Heuristic Search for Agile Earth Observation Satellite Scheduling | Wang He, Liu Yeye, Li Ruijie, Jiang Xuemei, Wu Junyu, Lining Liu Zhuoqi Man, Li Tao, Song Yanjie | College of Intelligent Science and Engineering, Harbin Engineering University, Harbin, China (；School of Electrical and Control Engineering, North University of China, Taiyuan, China (；School of Unmanned Aerial Vehicle Industry, Chengdu Aeronautic Polytechnic University, Chengdu, China (xue-；State Key Laboratory-Robot Research Institute, HIT, Harbin, Heilongjiang,, China (；School of Information Science and Tech- nology, Dalian Maritime University, Dalian, China ( | 采用大语言模型辅助自适应启发式搜索，求解敏捷地球观测卫星调度问题。 | [#53](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/53) |
-| [20261103] ReSMap: Recasting Satellite Priors for Robust and Accurate Online HD Map Construction | Kim Kyungmin, Lee Sumin, Jeong Sungoh, Lim DoHyun, Park Seonghyun, Hwang Soonmin | Department of Automotive Engineering (Automotive-Computer Convergence)；Department of Computer Science；Department of Electrical Engineering；Department of Automotive Engineering；Hanyang University, Seoul, South Korea | 重铸卫星先验用于鲁棒准确的在线高精地图构建，融合相机与卫星数据提升感知冗余。 | [#54](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/54) |
-| [20261103] OSGR: Observation-Support Graph Reasoning for Earth Observation Question Answering | Yu Dazhou, Wang Zerong, Bao Riyang, Li Longxiang, Liu Yang, Zhao Liang | Emory University；Georgia State University | 提出观测支持图推理框架，结合关系条件定位与时空约束回答地球观测问题。 | [#55](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/55) |
-
-## 🔎 观察
-
-- 免训练与零样本范式在遥感视觉任务中兴起，降低对标注数据依赖并提升跨域部署灵活性。
-- 水文与灾害研究正从纯物理模型转向嵌入表示与LLM智能体，强调可扩展推理与多源约束融合。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261103", "source": "api", "checked_at": "2026-11-04T16:04:49+00:00", "source_complete": true, "candidate_count": 12, "paper_count": 9} -->
 
 ---
