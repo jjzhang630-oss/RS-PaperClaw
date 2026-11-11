@@ -2,6 +2,39 @@
 
 最近三天日报（最新在前）：
 
+# [20261110](./202611/20261110.md)
+## 📌 今日概况
+
+今日共检索候选论文 21 篇；关键词+LLM 智能匹配遥感交叉论文 2 篇；最终纳入日报 2 篇。
+
+今日遥感AI研究呈现两个互补方向：一是自监督学习在跨传感器检索中的应用，RS-JEPA结合联合嵌入预测架构与扫描路径视图，并引入Vision Mamba处理跨传感器差异；二是面向应急监测的超轻量模型设计，picoEmergencyNet通过注意力增强和深度可分离空洞卷积实现航空图像分类。两篇工作分别从表征学习和模型效率切入，反映遥感领域对跨模态泛化与边缘部署的双重关注。
+
+## ✨ 今日亮点
+
+- RS-JEPA利用扫描路径视图构建自监督预训练，提升跨传感器图像检索性能。
+- picoEmergencyNet以超小参数量实现应急监测航空图像分类，兼顾精度与效率。
+- 两篇工作分别聚焦自监督跨模态表征与轻量化部署，体现遥感AI实用化趋势。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261110] RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views for Cross-Sensor Image Retrieval | Rachamalla Tanishq, Kaushik Srishti, Muhammad Attique Khan, Camps-Valls Gustau, Swalpa Kumar Roy | Prince Mohammad Bin Fahd University, Al Khobar, Saudi Arabia；Universitat de València, Valencia, Spain；Tezpur University, Assam, India | 提出RS-JEPA，利用扫描路径视图和Vision Mamba进行自监督预训练，实现跨传感器遥感图像检索。 | [#79](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/79) |
+| [20261110] picoEmergencyNet : Attention-Enhanced Ultra-Small Deep Learning Model for Aerial Image Classification in Emergency Monitoring | Kyrkou Christos | KIOS Research and Innovation Center of Excellence；University of Cyprus | 设计picoEmergencyNet，采用注意力增强和深度可分离空洞卷积的超轻量CNN，用于应急监测航空图像分类。 | [#80](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/80) |
+
+## 🔎 观察
+
+- 跨传感器检索与超轻量模型分别对应遥感数据异构性和边缘计算约束，表明研究正从单一精度导向转向场景适配。
+- 自监督预训练与极简网络设计并行发展，暗示未来遥感AI可能更注重预训练表征的迁移性与模型部署的可行性。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261110", "source": "api", "checked_at": "2026-11-11T15:59:28+00:00", "source_complete": true, "candidate_count": 21, "paper_count": 2} -->
+
+---
+
 # [20261107](./202611/20261107.md)
 ## 📌 今日概况
 
@@ -55,42 +88,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261106", "source": "api", "checked_at": "2026-11-09T16:04:38+00:00", "source_complete": true, "candidate_count": 11, "paper_count": 5} -->
-
----
-
-# [20261105](./202611/20261105.md)
-## 📌 今日概况
-
-今日共检索候选论文 14 篇；关键词+LLM 智能匹配遥感交叉论文 6 篇；最终纳入日报 6 篇。
-
-今日研究覆盖热带气旋临近预报、全国尺度树种制图、开放词汇分割、地理基础模型在高分辨率影像上的评测、跨视角三维重建以及空间物理边界检测。整体趋势显示，深度学习继续向多模态融合与开放场景扩展，同时针对基础模型在遥感领域的适用性开展系统性基准测试。应用导向明显，涵盖气象灾害、森林生态与空间天气。
-
-## ✨ 今日亮点
-
-- 热带气旋风场与强度临近预报利用静止卫星影像和神经网络实现。
-- 瑞士全国尺度树种组成制图融合高分辨率航空影像与多模态数据。
-- TerraMesh-Masks推动地球观测开放词汇分割与多模态数据集构建。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261105] Nowcasting of Tropical Cyclone Wind Fields and Intensity from Geostationary Imagery | Donike Simon, Nath Pritthijit, Radin Cristina, Avenas Arthur, Cartuyvels Ruben, Diaz Emiliano, William K. Jones, Jungbluth Anna | Earth Systems Lab；University of Valencia；University of Cambridge；Max Planck Institute for Marine Microbiology, Bremen, Germany；Imperial College London | 基于静止卫星影像与神经网络，开展热带气旋风场和强度的临近预报研究。 | [#65](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/65) |
-| [20261105] National-scale mapping of tree species composition in Switzerland from high-resolution aerial imagery and multimodal data | Zhou Yixin, Ferrari Luca, Verena C. Griess, Rehush Nataliia, Schindler Konrad, Beloiu Mirela | ETH Swiss Geo Lab；Ecosystem Ecology Group, Swiss Federal Research Institute WSL | 利用高分辨率航空影像与多模态数据，实现瑞士全国尺度树种组成制图。 | [#66](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/66) |
-| [20261105] TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation | Blumenstiel Benedikt, Devimeux Hugues, Jakubik Johannes, Schindler Konrad | IBM Research | 提出TerraMesh-Masks，面向地球观测的开放词汇分割与多模态数据集。 | [#67](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/67) |
-| [20261105] When GeoFMs Meet VHR: Benchmarking Foundation Models on Very High Resolution Earth Observation Imagery | Kshitij Raj Sharma, Adorni Pierre, Pham Minh-Tan, Tiede Dirk, Lefèvre Sébastien | Universit\'e Bretagne Sud, IRISA, France；University of Salzburg, Department of Geoinformatics, Austria；UiT The Arctic University of Norway, Troms, Norway | 系统评测地理基础模型在甚高分辨率地球观测影像上的迁移与预训练表现。 | [#68](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/68) |
-| [20261105] Georeferenced Cross-View 3D Reconstruction from Ground and Satellite Images | David G. Shatwell, Shah Mubarak | Institute of Artificial Intelligence, University of Central Florida；only the local scene geometry, but also localizing every camera center and 3 D | 从地面与卫星影像进行地理参考的跨视角三维重建，并估计相机位姿。 | [#69](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/69) |
-| [20261105] MP-DualNet: A Dual-Branch Deep Learning Approach for Magnetopause Boundary Detection Using Simulated SXI Images | Zhong Cheng, Yang Zhongwei, Sun Tianran, Huang Chengyan, Liu Jiajia, Guo Jingnan, Wang Yuming, Wang Chi | National Key Laboratory of Deep Space Exploration/School of Earth and Space Sciences, University of；State Key Laboratory of Solar Activity and Space Weather, National Space Science Center, Chinese；Academy of Sciences, Beijing 100190, China；CAS Center for Excellence in Comparative Planetology/CAS Key Laboratory of Geospace；Environment/Mengcheng National Geophysical Observatory, University of Science and Technology of | 利用模拟SXI图像与双分支网络，检测磁层顶边界以服务SMILE任务。 | [#70](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/70) |
-
-## 🔎 观察
-
-- 基础模型评测与开放词汇分割同日出现，反映遥感社区正从模型构建转向适用性验证与开放场景适配。
-- 多模态数据融合成为高频手段，覆盖森林制图与三维重建，显示单一影像模态的局限正被系统性弥补。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261105", "source": "api", "checked_at": "2026-11-06T16:06:35+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 6} -->
 
 ---
