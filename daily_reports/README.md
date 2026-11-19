@@ -2,6 +2,26 @@
 
 最近三天日报（最新在前）：
 
+# [20261115](./202611/20261115.md)
+## 📌 今日概况
+
+今日共检索候选论文 9 篇；关键词+LLM 智能匹配遥感交叉论文 0 篇；最终纳入日报 0 篇。
+
+当日未检索到符合条件并纳入日报的论文。
+
+## 🔎 观察
+
+- 已按当前主题复核，当日检索到的候选中没有符合筛选条件的论文。
+- 此为已复核的无匹配结果，无论文处理失败。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261115", "source": "api", "checked_at": "2026-11-19T01:27:22+00:00", "source_complete": true, "candidate_count": 9, "paper_count": 0} -->
+
+---
+
 # [20261114](./202611/20261114.md)
 ## 📌 今日概况
 
@@ -39,25 +59,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261113", "source": "api", "checked_at": "2026-11-17T16:01:27+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 0} -->
-
----
-
-# [20261112](./202611/20261112.md)
-## 📌 今日概况
-
-今日共检索候选论文 19 篇；关键词+LLM 智能匹配遥感交叉论文 0 篇；最终纳入日报 0 篇。
-
-当日未检索到符合条件并纳入日报的论文。
-
-## 🔎 观察
-
-- 已按当前主题复核，当日检索到的候选中没有符合筛选条件的论文。
-- 此为已复核的无匹配结果，无论文处理失败。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261112", "source": "api", "checked_at": "2026-11-16T15:59:26+00:00", "source_complete": true, "candidate_count": 19, "paper_count": 0} -->
 
 ---
