@@ -2,6 +2,26 @@
 
 最近三天日报（最新在前）：
 
+# [20261114](./202611/20261114.md)
+## 📌 今日概况
+
+今日共检索候选论文 7 篇；关键词+LLM 智能匹配遥感交叉论文 0 篇；最终纳入日报 0 篇。
+
+当日未检索到符合条件并纳入日报的论文。
+
+## 🔎 观察
+
+- 已按当前主题复核，当日检索到的候选中没有符合筛选条件的论文。
+- 此为已复核的无匹配结果，无论文处理失败。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261114", "source": "api", "checked_at": "2026-11-19T01:26:51+00:00", "source_complete": true, "candidate_count": 7, "paper_count": 0} -->
+
+---
+
 # [20261113](./202611/20261113.md)
 ## 📌 今日概况
 
@@ -39,37 +59,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261112", "source": "api", "checked_at": "2026-11-16T15:59:26+00:00", "source_complete": true, "candidate_count": 19, "paper_count": 0} -->
-
----
-
-# [20261111](./202611/20261111.md)
-## 📌 今日概况
-
-今日共检索候选论文 10 篇；关键词+LLM 智能匹配遥感交叉论文 1 篇；最终纳入日报 1 篇。
-
-今日仅一篇论文，聚焦星载AI在轨演示，将目标级变化检测应用于海事领域。研究依托ESA平台，强调在轨处理与多时相匹配结合，推动遥感从地面后处理向星上实时分析迁移。该工作代表小样本但高集成度的趋势：面向船舶分割与变化检测的端到端在轨验证，为后续星上智能处理提供工程参考。
-
-## ✨ 今日亮点
-
-- 在轨演示目标级变化检测，验证星上AI处理海事场景的可行性
-- 融合船舶分割与多时相匹配，面向在轨实时海事监测
-- 依托ESA ESRIN平台开展工程化验证，强调端到端集成
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261111] In-orbit demonstration of object-based change detection applied to the maritime domain | Cristopher Castro Traba, Hendrix Tom, Perrocheau Amaury, Pasanisi Francesco, Rogers Finian, Dunne Aubrey, Rijlaarsdam David, Roberto Del Prete, Longépé Nicolas, Meoni Gabriele | lab, European Space Research Institute (ESRIN), European Space Agency (ESA), Via Galileo Galilei, 1, Frascati, 00044, RM, Italy；Advanced Concepts and Studies Office, European Space Research Institute (ESRIN), European Space Agency (ESA), Via Galileo Galilei, 1, Frascati, 00044, RM, Italy | 基于ESA在轨平台演示目标级变化检测，结合船舶分割与多时相匹配实现海事监测。 | [#84](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/84) |
-
-## 🔎 观察
-
-- 研究体现遥感AI从地面后处理向星上在轨处理迁移的趋势，实时性成为关键指标。
-- 单篇在轨演示偏工程验证，方法创新有限，但为星上智能处理提供可复用集成经验。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261111", "source": "api", "checked_at": "2026-11-16T15:57:57+00:00", "source_complete": true, "candidate_count": 10, "paper_count": 1} -->
 
 ---
