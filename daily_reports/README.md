@@ -2,6 +2,41 @@
 
 最近三天日报（最新在前）：
 
+# [20261117](./202611/20261117.md)
+## 📌 今日概况
+
+今日共检索候选论文 17 篇；关键词+LLM 智能匹配遥感交叉论文 4 篇；最终纳入日报 4 篇。
+
+今日论文聚焦多模态遥感感知与跨域适应。高光谱超分辨工作关注真实双相机未配准场景，提出门控遮挡处理；SAR基础模型研究探索如何将已有强模型快速适配至多模态大模型，降低预训练成本；伪装车辆检测融合多光谱、偏振与红外多孔径信息，提升复杂背景下的识别能力；海事无人机搜救则引入事件相机，应对动态场景下的人员检测。整体趋势显示，研究者正从理想数据假设转向真实采集条件，强调模型轻量化适配与多传感器互补。
+
+## ✨ 今日亮点
+
+- 高光谱超分辨转向真实未配准双相机采集，处理跨相机对齐与遮挡。
+- SAR基础模型通过自适应后预训练快速接入多模态大模型。
+- 多光谱偏振红外多孔径融合用于伪装车辆检测，增强复杂背景感知。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261117] TANGO: Real-World Unregistered RGB-Guided Hyperspectral Super-Resolution with Two-Camera Acquisitions | Kolyszko Matteo, Buzzelli Marco, Bianco Simone, Schettini Raimondo | University of Milano-Bicocca | 提出TANGO方法，面向真实双相机未配准RGB引导高光谱超分辨，引入跨相机对齐与门控遮挡处理。 | [#90](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/90) |
+| [20261117] SARVIA: Fast-Adapting the Strong SAR Foundation Models That Are Already in Your MLLMs | Li Yuxuan, Tian Zichen, Sun Qianru | Singapore Management University | SARVIA利用已有SAR基础模型进行快速自适应后预训练，使其适配多模态大语言模型。 | [#91](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/91) |
+| [20261117] Multispectral-Polarization-Infrared Multi-Aperture Camouflaged Vehicle Detection | Wang Shu, Lin Xiong, Song Yuan, Wang Junjie, Huang Feng, Liu Wenxi | School of Mechanical Engineering and Automation, Fuzhou University；National Biomedical Imaging Center, College of Future Technology；Peking University, Beijing 100871, China；College of Computer and Data Science, Fuzhou University, Fuzhou | 融合多光谱、偏振与红外多孔径成像，提升伪装车辆在复杂背景下的检测能力。 | [#92](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/92) |
+| [20261117] Event-Based Person Detection for Maritime UAV Search | Ning Zijie, Vandewalle Patrick | EAVISE-PSI, ESAT, KU Leuven | 面向海事无人机搜救，采用事件相机进行人员检测，应对动态场景与低光照挑战。 | [#93](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/93) |
+
+## 🔎 观察
+
+- 真实采集条件下的未配准与遮挡问题正成为高光谱超分辨研究的新焦点。
+- 基础模型复用与轻量适配策略在SAR与多模态大模型结合中显现效率优势。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261117", "source": "api", "checked_at": "2026-11-19T01:35:27+00:00", "source_complete": true, "candidate_count": 17, "paper_count": 4} -->
+
+---
+
 # [20261115](./202611/20261115.md)
 ## 📌 今日概况
 
@@ -39,25 +74,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261114", "source": "api", "checked_at": "2026-11-19T01:26:51+00:00", "source_complete": true, "candidate_count": 7, "paper_count": 0} -->
-
----
-
-# [20261113](./202611/20261113.md)
-## 📌 今日概况
-
-今日共检索候选论文 14 篇；关键词+LLM 智能匹配遥感交叉论文 0 篇；最终纳入日报 0 篇。
-
-当日未检索到符合条件并纳入日报的论文。
-
-## 🔎 观察
-
-- 已按当前主题复核，当日检索到的候选中没有符合筛选条件的论文。
-- 此为已复核的无匹配结果，无论文处理失败。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261113", "source": "api", "checked_at": "2026-11-17T16:01:27+00:00", "source_complete": true, "candidate_count": 14, "paper_count": 0} -->
 
 ---
