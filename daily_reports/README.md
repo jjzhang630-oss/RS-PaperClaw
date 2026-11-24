@@ -2,6 +2,38 @@
 
 最近三天日报（最新在前）：
 
+# [20261123](./202611/20261123.md)
+## 📌 今日概况
+
+今日共检索候选论文 20 篇；关键词+LLM 智能匹配遥感交叉论文 1 篇；最终纳入日报 1 篇。
+
+今日候选论文聚焦高光谱图像分类的模型轻量化与可靠性提升。KGLP-Net将卡尔曼滤波引入全局-局部学习框架，用于不确定性感知融合，并结合Group Fisher剪枝降低模型冗余。该工作体现了遥感AI领域对分类精度、计算效率与预测可靠性三者协同优化的关注，也反映出剪枝与滤波理论在遥感任务中的交叉应用趋势。
+
+## ✨ 今日亮点
+
+- 提出KGLP-Net，融合卡尔曼可靠全局-局部学习与Group Fisher剪枝。
+- 面向高光谱图像分类，兼顾不确定性感知融合与模型压缩。
+- 由西安邮电大学与英国斯塔福德郡大学合作完成。
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261123] KGLP-Net: Kalman-Reliable Global--Local Learning With Group Fisher Pruning for Hyperspectral Image Classification | Deng Wenshuai, Xie Wen, Abdel Hamid Soliman, Zhao Qianzheng | School of Communications and Information Engineering, Xi'an University of Posts and Telecommunications, Xi'an, China (；School of Digital, Technology, Innovation, and Business, University of Staffordshire, Stoke-on-Trent ST4 2 DE, U.K. ( | 提出KGLP-Net，用卡尔曼滤波实现可靠全局-局部融合，并以Group Fisher剪枝压缩高光谱分类模型。 | [#100](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/100) |
+
+## 🔎 观察
+
+- 卡尔曼滤波被用于融合可靠性建模，说明不确定性感知正从后处理走向网络内嵌设计。
+- Group Fisher剪枝与全局-局部学习结合，反映遥感模型在精度与效率间寻求结构化平衡。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261123", "source": "api", "checked_at": "2026-11-24T15:58:37+00:00", "source_complete": true, "candidate_count": 20, "paper_count": 1} -->
+
+---
+
 # [20261120](./202611/20261120.md)
 ## 📌 今日概况
 
@@ -51,25 +83,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261119", "source": "api", "checked_at": "2026-11-23T15:59:31+00:00", "source_complete": true, "candidate_count": 22, "paper_count": 0} -->
-
----
-
-# [20261118](./202611/20261118.md)
-## 📌 今日概况
-
-今日共检索候选论文 20 篇；关键词+LLM 智能匹配遥感交叉论文 0 篇；最终纳入日报 0 篇。
-
-当日未检索到符合条件并纳入日报的论文。
-
-## 🔎 观察
-
-- 已按当前主题复核，当日检索到的候选中没有符合筛选条件的论文。
-- 此为已复核的无匹配结果，无论文处理失败。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261118", "source": "api", "checked_at": "2026-11-23T15:58:57+00:00", "source_complete": true, "candidate_count": 20, "paper_count": 0} -->
 
 ---
