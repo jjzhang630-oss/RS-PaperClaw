@@ -2,6 +2,38 @@
 
 最近三天日报（最新在前）：
 
+# [20261120](./202611/20261120.md)
+## 📌 今日概况
+
+今日共检索候选论文 17 篇；关键词+LLM 智能匹配遥感交叉论文 1 篇；最终纳入日报 1 篇。
+
+今日仅一篇论文，聚焦无人机实时高光谱异常检测，面向荒野搜救场景。研究将高光谱成像与机载边缘计算结合，强调在无人机端直接处理数据以降低延迟，摆脱对地面站回传的依赖。该工作体现了遥感AI向实时化、边缘化发展的趋势，尤其关注应急响应中的低延迟需求。由于样本单一，尚难判断整体领域动向，但可视为高光谱异常检测从离线分析向在线部署转型的一个具体案例。
+
+## ✨ 今日亮点
+
+- 面向荒野搜救的无人机实时高光谱异常检测系统
+- 强调机载边缘计算，减少对地面站回传的依赖
+- 将高光谱异常检测从离线分析推向在线部署
+
+## 🗂 今日文章列表
+
+| 标题 | 作者 | 单位 | 一句话概括 | Issue |
+|---|---|---|---|---|
+| [20261120] Real-Time On-Drone Hyperspectral Anomaly Detection for Wilderness Search and Rescue | Liu Jacqueline, Kyere Gyabaah, Liu Chengyan, Chiu Kenneth, Marie Lynn, Church, Gleason Sean, Boubin Jayson | School of Computing, Binghamton University, Binghamton, NY USA ( | 提出无人机端实时高光谱异常检测方法，用于荒野搜救中快速发现异常目标，依托机载计算实现低延迟处理。 | [#98](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/98) |
+
+## 🔎 观察
+
+- 该研究将高光谱异常检测与无人机边缘计算结合，反映遥感AI从离线处理向实时机载部署的转型趋势。
+- 单一搜救场景论文难以代表整体动向，但凸显应急响应中对低延迟、轻量化算法的迫切需求。
+
+---
+
+Powered by OpenClaw🦞
+
+<!-- rs-pipeline: {"date": "20261120", "source": "api", "checked_at": "2026-11-24T15:56:49+00:00", "source_complete": true, "candidate_count": 17, "paper_count": 1} -->
+
+---
+
 # [20261119](./202611/20261119.md)
 ## 📌 今日概况
 
@@ -39,40 +71,5 @@ Powered by OpenClaw🦞
 Powered by OpenClaw🦞
 
 <!-- rs-pipeline: {"date": "20261118", "source": "api", "checked_at": "2026-11-23T15:58:57+00:00", "source_complete": true, "candidate_count": 20, "paper_count": 0} -->
-
----
-
-# [20261117](./202611/20261117.md)
-## 📌 今日概况
-
-今日共检索候选论文 17 篇；关键词+LLM 智能匹配遥感交叉论文 4 篇；最终纳入日报 4 篇。
-
-今日论文聚焦多模态遥感感知与跨域适应。高光谱超分辨工作关注真实双相机未配准场景，提出门控遮挡处理；SAR基础模型研究探索如何将已有强模型快速适配至多模态大模型，降低预训练成本；伪装车辆检测融合多光谱、偏振与红外多孔径信息，提升复杂背景下的识别能力；海事无人机搜救则引入事件相机，应对动态场景下的人员检测。整体趋势显示，研究者正从理想数据假设转向真实采集条件，强调模型轻量化适配与多传感器互补。
-
-## ✨ 今日亮点
-
-- 高光谱超分辨转向真实未配准双相机采集，处理跨相机对齐与遮挡。
-- SAR基础模型通过自适应后预训练快速接入多模态大模型。
-- 多光谱偏振红外多孔径融合用于伪装车辆检测，增强复杂背景感知。
-
-## 🗂 今日文章列表
-
-| 标题 | 作者 | 单位 | 一句话概括 | Issue |
-|---|---|---|---|---|
-| [20261117] TANGO: Real-World Unregistered RGB-Guided Hyperspectral Super-Resolution with Two-Camera Acquisitions | Kolyszko Matteo, Buzzelli Marco, Bianco Simone, Schettini Raimondo | University of Milano-Bicocca | 提出TANGO方法，面向真实双相机未配准RGB引导高光谱超分辨，引入跨相机对齐与门控遮挡处理。 | [#90](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/90) |
-| [20261117] SARVIA: Fast-Adapting the Strong SAR Foundation Models That Are Already in Your MLLMs | Li Yuxuan, Tian Zichen, Sun Qianru | Singapore Management University | SARVIA利用已有SAR基础模型进行快速自适应后预训练，使其适配多模态大语言模型。 | [#91](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/91) |
-| [20261117] Multispectral-Polarization-Infrared Multi-Aperture Camouflaged Vehicle Detection | Wang Shu, Lin Xiong, Song Yuan, Wang Junjie, Huang Feng, Liu Wenxi | School of Mechanical Engineering and Automation, Fuzhou University；National Biomedical Imaging Center, College of Future Technology；Peking University, Beijing 100871, China；College of Computer and Data Science, Fuzhou University, Fuzhou | 融合多光谱、偏振与红外多孔径成像，提升伪装车辆在复杂背景下的检测能力。 | [#92](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/92) |
-| [20261117] Event-Based Person Detection for Maritime UAV Search | Ning Zijie, Vandewalle Patrick | EAVISE-PSI, ESAT, KU Leuven | 面向海事无人机搜救，采用事件相机进行人员检测，应对动态场景与低光照挑战。 | [#93](https://github.com/jjzhang630-oss/RS-PaperClaw/issues/93) |
-
-## 🔎 观察
-
-- 真实采集条件下的未配准与遮挡问题正成为高光谱超分辨研究的新焦点。
-- 基础模型复用与轻量适配策略在SAR与多模态大模型结合中显现效率优势。
-
----
-
-Powered by OpenClaw🦞
-
-<!-- rs-pipeline: {"date": "20261117", "source": "api", "checked_at": "2026-11-19T01:35:27+00:00", "source_complete": true, "candidate_count": 17, "paper_count": 4} -->
 
 ---
